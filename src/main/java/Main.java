@@ -2,13 +2,13 @@
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +20,20 @@ public class Main extends Application {
     private Label ScoreLabel;
     private Integer Score = 0;
     private int Level=1;
+    private final static Logger logger = Logger.getLogger(Main.class);
+    private int timer=0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception
+    {
+        //GameController game = new GameController(primaryStage);
+        //game.Start();
+
         AnchorPane root = FXMLLoader.load(getClass().getResource("SpaceInvadersMainScene.fxml"));
         primaryStage.setTitle("Space Invaders");
         primaryStage.setResizable(false);
+
+
 
         Scene mainScene = new Scene(root);
 
@@ -48,12 +56,15 @@ public class Main extends Application {
             switch (event.getCode()) {
                 case LEFT:
                     this.Player.MoveLeft();
+                    logger.debug("Player moved to the left.");
                     break;
                 case RIGHT:
                     this.Player.MoveRight();
+                    logger.debug("Player moved to the right.");
                     break;
                 case SPACE:
                     this.Shoot(this.Player);
+                    logger.debug("Player shot torpedo.");
                     break;
             }
         });
@@ -66,8 +77,9 @@ public class Main extends Application {
         //GameController.StartGame();
     }
 
-    private Pane Init(Pane root) {
-        root.setPrefSize(AppConstants.GamePanePreferredWidth, AppConstants.GamePanePreferredHeight);
+    private Pane Init(Pane root)
+    {
+        root.setPrefSize(AppConstants.MaxGamePaneWidth, AppConstants.MaxGamePaneHeight);
         ConfigObject playerConfig = new ConfigObject(
                 AppConstants.PlayerShipXCoordinate,
                 AppConstants.PlayerShipYCoordinate,
@@ -75,8 +87,11 @@ public class Main extends Application {
                 AppConstants.PlayerShipWidth,
                 "Player",
                 Color.BLUE);
+        logger.debug("Player created.");
+
         Player = new SpaceShip(playerConfig);
         root.getChildren().add(Player);
+        logger.debug("PLayer ship added to GamePane.");
 
         AnimationTimer timer = new AnimationTimer() {
             @Override
@@ -88,6 +103,7 @@ public class Main extends Application {
         timer.start();
 
         root.getChildren().addAll(CreateEnemies(5));
+        logger.debug("Enemy ships added to GamePane.");
 
         return root;
     }
@@ -103,15 +119,16 @@ public class Main extends Application {
                     "Enemy",
                     Color.RED);
             ships.add(new SpaceShip(config));
+            logger.debug("Enemy ship created.");
         }
 
         SpaceShip[] a = new SpaceShip[ships.size()];
         return ships.toArray(a);
     }
 
-    private List<GameObject> GetGameObjects()
+    private List<ObservableGameObject> GetGameObjects()
     {
-        return this.GamePane.getChildren().stream().map(o-> (GameObject)o).collect(Collectors.toList());
+        return this.GamePane.getChildren().stream().map(o-> (ObservableGameObject)o).collect(Collectors.toList());
     }
 
     private void Shoot(SpaceShip shooter)
@@ -123,12 +140,15 @@ public class Main extends Application {
                 5,
                 shooter.Type+"Torpedo",
                 Color.BLACK);
+
         this.GamePane.getChildren().add(new Torpedo(config));
+        logger.debug(String.format("Torpedo shot by %s.", shooter.Type));
     }
 
     private void UpdateScene()
     {
-        for(GameObject gameObject : this.GetGameObjects())
+        logger.debug("Updating scene..");
+        for(ObservableGameObject gameObject : this.GetGameObjects())
         {
             if (gameObject.Type.equals("PlayerTorpedo"))
             {
@@ -144,6 +164,7 @@ public class Main extends Application {
                                 gameObject.IsDead=true;
                                 this.Score=this.Score+100*this.Level;
                                 this.ScoreLabel.setText(this.Score.toString());
+                                logger.info("Enemy ship destroyed.");
                             }
                         });
             }
@@ -151,28 +172,43 @@ public class Main extends Application {
             if (gameObject.Type.equals("EnemyTorpedo"))
             {
                 gameObject.MoveDown();
-
+                if(gameObject.getBoundsInParent().intersects(this.Player.getBoundsInParent()))
+                {
+                    this.Player.IsDead=true;
+                    gameObject.IsDead=true;
+                    logger.info("Player ship destroyed.");
+                }
             }
         }
 
         //Remove Dead Objects
-        List<GameObject> deadObjects = GamePane
+        logger.debug("Removing dead objects.");
+        List<ObservableGameObject> deadObjects = GamePane
                 .getChildren()
                 .stream()
-                .map(obj-> (GameObject)obj)
+                .map(obj-> (ObservableGameObject)obj)
                 .filter(obj-> obj.IsDead)
                 .collect(Collectors.toList());
         GamePane.getChildren().removeAll(deadObjects);
+        deadObjects.clear();
+        logger.debug("Removed dead objects.");
 
-        //Remove missed torpedos
-//        List<Node> missedTorpedos=GamePane
-//                .getChildren()
-//                .stream()
-//                .filter(obj-> obj.getTranslateY()-AppConstants.GamePanePreferredHeight<=5)
-//                .collect(Collectors.toList());
-//        GamePane.getChildren().removeAll(missedTorpedos);
+        for(ObservableGameObject enemy : this.GamePane.getChildren().stream().map(o-> (ObservableGameObject)o).filter(o-> o.Type.equals("Enemy")).collect(Collectors.toList()))
+        {
+            if(timer%100==0)
+            {
+                SpaceShip enemyShip= (SpaceShip)enemy;
+                this.Shoot(enemyShip);
+                break;
+            }
+        }
 
+        timer++;
 
+        if(this.Player.IsDead)
+        {
+
+        }
     }
 
     public static void main(String[] args)

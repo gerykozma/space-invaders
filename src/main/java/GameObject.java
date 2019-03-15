@@ -1,53 +1,71 @@
 
-import javafx.scene.shape.Rectangle;
-
-public abstract class GameObject extends Rectangle
+public class GameObject
 {
-    public final String Type;
-    public  boolean IsDead;
+    private GameObjectType _type;
+    private double _xCoordinate;
+    private double _yCoordinate;
+    private boolean _isDead;
 
-    protected GameObject(ConfigObject config)
+    protected GameObject(double x, double y, GameObjectType type)
     {
-        super(config.Width, config.Height, config.Color);
-        this.Type=config.Type;
-        this.IsDead=false;
-
-        this.setTranslateX(config.XCoordinate);
-        this.setTranslateY(config.YCoordinate);
-    }
-
-    public void MoveLeft()
-    {
-
-        this.setTranslateX(this.getTranslateX() - 5);
-
-    }
-
-    public void MoveRight()
-    {
-
-        this.setTranslateX(this.getTranslateX() + 5);
-
-    }
-
-    public void MoveUp()
-    {
-        if(this.getTranslateY() - 5 > 0)
+        if (x < 0 || x > AppConstants.MaxGamePaneWidth)
         {
-            this.setTranslateY(this.getTranslateY() - 5);
+            throw new IllegalArgumentException("Invalid X value.");
         }
-    }
 
-    public void MoveDown()
-    {
-        if(this.getTranslateY() + 5 < AppConstants.GamePanePreferredHeight)
+        if (y < 0 || y > AppConstants.MaxGamePaneHeight)
         {
-            this.setTranslateY(this.getTranslateY() + 5);
+            throw new IllegalArgumentException("Invalid Y value.");
         }
+
+        this._type=type;
+        this._xCoordinate = x;
+        this._yCoordinate = y;
+        this._isDead = false;
     }
 
-    public void SetDeath()
+    public double GetX()
     {
-        this.IsDead  = true;
+        return this._xCoordinate;
+    }
+
+    public double GetY()
+    {
+        return this._yCoordinate;
+    }
+
+    public boolean GetIsDead()
+    {
+        return  this._isDead;
+    }
+
+    public GameObjectType GetType()
+    {
+        return this._type;
+    }
+
+    protected boolean TrySetX(double x)
+    {
+        if(x<0 || x>AppConstants.MaxGamePaneWidth)
+        {
+            return false;
+        }
+        this._xCoordinate=x;
+        return true;
+    }
+
+    protected boolean TrySetY(double y)
+    {
+        if(y<0 || y>AppConstants.MaxGamePaneWidth)
+        {
+            return false;
+        }
+        this._yCoordinate=y;
+        return true;
+    }
+
+    protected void SetToDead()
+    {
+        this._isDead=true;
     }
 }

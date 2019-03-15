@@ -1,5 +1,5 @@
 
-public class Torpedo extends GameObject
+public class Torpedo extends ObservableGameObject
 {
     protected Torpedo(ConfigObject config)
     {
@@ -28,7 +28,7 @@ public class Torpedo extends GameObject
     @Override
     public void MoveDown()
     {
-        if(this.getTranslateY() + 5 < AppConstants.GamePanePreferredHeight)
+        if(this.getTranslateY() + 5 < AppConstants.MaxGamePaneHeight)
         {
             this.setTranslateY(this.getTranslateY() + 5);
         }

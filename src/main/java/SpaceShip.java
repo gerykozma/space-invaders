@@ -1,5 +1,5 @@
 
-public class SpaceShip extends GameObject
+public class SpaceShip extends ObservableGameObject
 {
     public SpaceShip(ConfigObject config)
     {
