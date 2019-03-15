@@ -34,7 +34,7 @@ public abstract class GameObject extends Rectangle
     {
         if(this.getTranslateY() - 5 > 0)
         {
-            this.setTranslateX(this.getTranslateY() - 5);
+            this.setTranslateY(this.getTranslateY() - 5);
         }
     }
 
@@ -42,7 +42,7 @@ public abstract class GameObject extends Rectangle
     {
         if(this.getTranslateY() + 5 < AppConstants.GamePanePreferredHeight)
         {
-            this.setTranslateX(this.getTranslateY() + 5);
+            this.setTranslateY(this.getTranslateY() + 5);
         }
     }
 
