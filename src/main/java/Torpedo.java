@@ -21,7 +21,7 @@ public class Torpedo extends ObservableGameObject
         }
         else
         {
-            this.IsDead=true;
+            this.SetDeath();
         }
     }
 
@@ -34,7 +34,7 @@ public class Torpedo extends ObservableGameObject
         }
         else
         {
-            this.IsDead=true;
+            this.SetDeath();
         }
     }
 }

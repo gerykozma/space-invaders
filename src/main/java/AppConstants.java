@@ -9,4 +9,6 @@ public final class AppConstants
     protected static final int PlayerShipHeight=40;
     protected static final int EnemyShipWidth=30;
     protected static final int EnemyShipHeight=30;
+    protected static final int DestroyedEnemyShipBaseScore=100;
+    protected static final int BossBattleLevelNumber= 5;
 }
