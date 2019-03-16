@@ -13,36 +13,44 @@ public abstract class ObservableGameObject extends Rectangle
         this.setTranslateY(this._gameObject.GetY());
     }
 
-    public void MoveLeft()
+    public boolean TryMoveLeft()
     {
         if(this._gameObject.TrySetX(this._gameObject.GetX() - 5))
         {
             this.setTranslateX(this._gameObject.GetX());
+            return true;
         }
+        return false;
     }
 
-    public void MoveRight()
+    public boolean TryMoveRight()
     {
-        if(this._gameObject.TrySetX(this._gameObject.GetX() +5))
+        if(this._gameObject.TrySetX(this._gameObject.GetX() + 5))
         {
             this.setTranslateX(this._gameObject.GetX());
+            return true;
         }
+        return false;
     }
 
-    public void MoveUp()
+    public boolean TryMoveUp()
     {
         if(this._gameObject.TrySetY(this._gameObject.GetY() - 5 ))
         {
             this.setTranslateY(this._gameObject.GetY());
+            return true;
         }
+        return false;
     }
 
-    public void MoveDown()
+    public boolean TryMoveDown()
     {
         if(this._gameObject.TrySetY(this._gameObject.GetY() + 5))
         {
             this.setTranslateY(this._gameObject.GetY());
+            return true;
         }
+        return false;
     }
 
     public void SetDeath()

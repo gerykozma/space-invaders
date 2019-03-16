@@ -8,7 +8,9 @@ import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class GameController {
@@ -18,12 +20,15 @@ public class GameController {
     private SpaceShip _player;
     private Pane _gamePane;
     private Label _scoreLabel;
+    private Label _levelLabel;
     private ScoreHelper _scoreHelper;
-    private EnemyAI _enemyAI;
 
     private AnimationTimer _timer;
     private boolean _isPaused = false;
 
+    private int _enemyFireRate;
+    private boolean _enemyMoveToRight=false;
+    private Random _randomGenerator;
 
     public GameController(Stage primaryStage) throws IOException, IllegalArgumentException {
         if (primaryStage == null) {
@@ -47,6 +52,7 @@ public class GameController {
             }
         };
         this._scoreHelper = new ScoreHelper(0, 1);
+        this._randomGenerator = new Random(Calendar.MILLISECOND);
 
         primaryStage.setTitle("Space Invaders");
         primaryStage.setResizable(false);
@@ -54,6 +60,7 @@ public class GameController {
         Scene mainScene = new Scene(root);
         this._gamePane = (Pane) mainScene.lookup("#GamePane");
         this._scoreLabel = (Label) mainScene.lookup("#ScoreLabel");
+        this._levelLabel=(Label) mainScene.lookup("#LevelLabel");
 
         if (this._gamePane == null) {
             throw new UnsupportedOperationException("GamePane was null. Error while loading element from fxml.");
@@ -61,6 +68,10 @@ public class GameController {
 
         if (this._scoreLabel == null) {
             throw new UnsupportedOperationException("ScoreLabel was null. Error while loading element from fxml.");
+        }
+
+        if (this._levelLabel == null) {
+            throw new UnsupportedOperationException("LevelLabel was null. Error while loading element from fxml.");
         }
 
         this._gamePane.setPrefSize(AppConstants.MaxGamePaneWidth, AppConstants.MaxGamePaneHeight);
@@ -121,12 +132,54 @@ public class GameController {
         }
 
         //If any enemy is alive, shoot a random torpedo and move
-        EnemyAI.Update(GetGameObjects()
+        this.EnemyShootTorpedos();
+
+        this.MoveEnemyShips();
+
+    }
+
+    private void MoveEnemyShips()
+    {
+        List<SpaceShip> enemyShips = GetGameObjects()
                 .stream()
                 .filter(o-> o.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
-                .collect(Collectors.toList()));
+                .map(o->(SpaceShip)o)
+                .collect(Collectors.toList());
 
+        if(_enemyFireRate%100==0)
+        {
+            this._enemyMoveToRight=!this._enemyMoveToRight;
+        }
 
+        for(SpaceShip enemyShip : enemyShips)
+        {
+            if(this._enemyMoveToRight)
+            {
+                enemyShip.TryMoveRight();
+            }
+            else
+            {
+                enemyShip.TryMoveLeft();
+
+            }
+        }
+    }
+
+    private void EnemyShootTorpedos()
+    {
+       List<SpaceShip> enemyShips = GetGameObjects()
+                .stream()
+                .filter(o-> o.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
+               .map(o->(SpaceShip)o)
+                .collect(Collectors.toList());
+
+       if(this._enemyFireRate % 200 == 0)
+       {
+            int randomIndex = this._randomGenerator.nextInt(enemyShips.size());
+            this.Shoot(enemyShips.get(randomIndex));
+       }
+
+        this._enemyFireRate++;
     }
 
     private boolean AnyEnemyShipAlive() {
@@ -155,7 +208,7 @@ public class GameController {
     private void UpdatePlayerTorpedos() {
         for (ObservableGameObject observableGameObject : this.GetGameObjects()) {
             if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.PlayerTorped)) {
-                observableGameObject.MoveUp();
+                observableGameObject.TryMoveUp();
                 this.GetGameObjects()
                         .stream()
                         .filter(enemy -> enemy.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
@@ -173,11 +226,15 @@ public class GameController {
         }
     }
 
-    private void UpDateEnemyTorpedos() {
-        for (ObservableGameObject observableGameObject : this.GetGameObjects()) {
-            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.EnemyTorpedo)) {
-                observableGameObject.MoveDown();
-                if (observableGameObject.getBoundsInParent().intersects(this._player.getBoundsInParent())) {
+    private void UpDateEnemyTorpedos()
+    {
+        for (ObservableGameObject observableGameObject : this.GetGameObjects())
+        {
+            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.EnemyTorpedo))
+            {
+                observableGameObject.TryMoveDown();
+                if (observableGameObject.getBoundsInParent().intersects(this._player.getBoundsInParent()))
+                {
                     this._player.SetDeath();
                     observableGameObject.SetDeath();
                     EventLogger.info("Player ship destroyed.");
@@ -195,7 +252,8 @@ public class GameController {
         }
     }
 
-    private void RemoveDeadObjects() {
+    private void RemoveDeadObjects()
+    {
         EventLogger.debug("Removing dead objects.");
         List<ObservableGameObject> deadObjects = this.GetGameObjects()
                 .stream()
@@ -212,6 +270,9 @@ public class GameController {
 
         //Remove left-over objects
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
+        this._enemyFireRate =0;
+
+        this._levelLabel.setText(this._scoreHelper.GetLevelAsString());
 
         this._player = GameObjectFactory.CreatePlayerShip();
         EventLogger.debug("Player created.");
@@ -223,7 +284,8 @@ public class GameController {
         EventLogger.debug("Enemy ships added to GamePane.");
     }
 
-    private void Shoot(SpaceShip shooter) {
+    private void Shoot(SpaceShip shooter)
+    {
         Torpedo torpedo = GameObjectFactory.CreateTorpedo(shooter);
         this._gamePane.getChildren().add(torpedo);
         EventLogger.debug(String.format("Torpedo shot by %s.", shooter.toString()));
@@ -238,14 +300,14 @@ public class GameController {
 
     private void TryPlayerMoveLeft() {
         if (!this._isPaused) {
-            this._player.MoveLeft();
+            this._player.TryMoveLeft();
             EventLogger.debug("Player moved to the left.");
         }
     }
 
     private void TryPlayerMoveRight() {
         if (!this._isPaused) {
-            this._player.MoveRight();
+            this._player.TryMoveRight();
             EventLogger.debug("Player moved to the right.");
         }
     }

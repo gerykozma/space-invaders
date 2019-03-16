@@ -7,34 +7,38 @@ public class Torpedo extends ObservableGameObject
     }
 
     @Override
-    public void MoveRight(){}
+    public boolean TryMoveRight(){return false;}
 
     @Override
-    public void MoveLeft(){ }
+    public boolean TryMoveLeft(){ return false;}
 
     @Override
-    public void MoveUp()
+    public boolean TryMoveUp()
     {
         if(this.getTranslateY() - 5 > 0)
         {
             this.setTranslateY(this.getTranslateY() - 5);
+            return true;
         }
         else
         {
             this.SetDeath();
+            return false;
         }
     }
 
     @Override
-    public void MoveDown()
+    public boolean TryMoveDown()
     {
         if(this.getTranslateY() + 5 < AppConstants.MaxGamePaneHeight)
         {
             this.setTranslateY(this.getTranslateY() + 5);
+            return true;
         }
         else
         {
             this.SetDeath();
+            return false;
         }
     }
 }

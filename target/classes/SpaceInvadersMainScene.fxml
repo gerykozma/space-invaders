@@ -8,34 +8,36 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="AnchorPane" maxHeight="800.0" maxWidth="800.0" minHeight="800.0" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" snapToPixel="true" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
-    <children>
-        <Pane fx:id="MenuPane" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="772.0">
-            <children>
-                <MenuBar layoutX="0.0" layoutY="5.0" maxWidth="-1.0" prefWidth="772.0" useSystemMenuBar="false">
-                    <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                            <items>
-                                <MenuItem id="StartNewGameMenuOption" mnemonicParsing="false" text="Start New Game" />
-                                <MenuItem id="SaveGameMenuOption" mnemonicParsing="false" text="Save Game" />
-                                <MenuItem id="LoadGameMenuOption" mnemonicParsing="false" text="Load Game"/>
-                                <MenuItem id="ExitMenuOption" mnemonicParsing="false" text="Exit" />
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-            </children>
-        </Pane>
-        <Pane fx:id="GamePane" layoutX="14.0" layoutY="78.0" prefHeight="700.0" prefWidth="600.0" />
-        <Pane fx:id="InfoPane" layoutX="614.0" layoutY="78.0" prefHeight="700.0" prefWidth="172.0">
-            <children>
-                <Separator layoutX="0.0" layoutY="0.0" orientation="VERTICAL" prefHeight="700.0" />
-                <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="144.0" text="Your Score:">
-                    <font>
-                        <Font name="System Bold" size="20.0" />
-                    </font>
-                </Label>
-                <Label fx:id="ScoreLabel" alignment="CENTER" layoutX="28.0" layoutY="48.0" prefHeight="40.0" prefWidth="116.0" text="0" />
-            </children>
-        </Pane>
-    </children>
+  <children>
+    <Pane fx:id="MenuPane" layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="772.0">
+      <children>
+        <MenuBar layoutX="0.0" layoutY="5.0" maxWidth="-1.0" prefWidth="765.0" useSystemMenuBar="false">
+          <menus>
+            <Menu mnemonicParsing="false" text="File">
+              <items>
+                <MenuItem id="StartNewGameMenuOption" mnemonicParsing="false" text="Start New Game" />
+                <MenuItem id="SaveGameMenuOption" mnemonicParsing="false" text="Save Game" />
+                <MenuItem id="LoadGameMenuOption" mnemonicParsing="false" text="Load Game" />
+                <MenuItem id="ExitMenuOption" mnemonicParsing="false" text="Exit" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+      </children>
+    </Pane>
+    <Pane fx:id="GamePane" layoutX="14.0" layoutY="78.0" prefHeight="700.0" prefWidth="600.0" />
+    <Pane fx:id="InfoPane" layoutX="621.0" layoutY="78.0" prefHeight="700.0" prefWidth="160.0">
+      <children>
+        <Separator layoutX="0.0" layoutY="0.0" orientation="VERTICAL" prefHeight="700.0" />
+        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefWidth="144.0" text="Your Score:">
+          <font>
+            <Font name="System Bold" size="20.0" fx:id="x1" />
+          </font>
+        </Label>
+        <Label fx:id="ScoreLabel" alignment="CENTER" layoutX="28.0" layoutY="48.0" prefHeight="40.0" prefWidth="116.0" text="0" />
+        <Label id="" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="92.0" prefWidth="144.0" text="Level:" />
+        <Label fx:id="LevelLabel" alignment="CENTER" layoutX="28.0" layoutY="131.0" prefHeight="40.0" prefWidth="116.0" text="0" />
+      </children>
+    </Pane>
+  </children>
 </AnchorPane>

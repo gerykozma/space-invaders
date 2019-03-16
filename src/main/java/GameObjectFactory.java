@@ -22,7 +22,7 @@ public final class GameObjectFactory {
         for (int i = 0; i < numberOfEnemiesToCreate; i++) {
             ConfigObject config = new ConfigObject(
                     100 + i * 100,
-                    AppConstants.EnemyShipYCoordinate,
+                    AppConstants.EnemyShipYCoordinate + i * 100,
                     AppConstants.EnemyShipHeight,
                     AppConstants.EnemyShipWidth,
                     GameObjectType.EnemyShip,

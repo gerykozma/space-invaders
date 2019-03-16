@@ -46,7 +46,7 @@ public class GameObject
 
     protected boolean TrySetX(double x)
     {
-        if(x<0 || x>AppConstants.MaxGamePaneWidth)
+        if(x<0 || x + AppConstants.PlayerShipWidth >AppConstants.MaxGamePaneWidth )
         {
             return false;
         }
@@ -56,7 +56,7 @@ public class GameObject
 
     protected boolean TrySetY(double y)
     {
-        if(y<0 || y>AppConstants.MaxGamePaneWidth)
+        if(y<0 || y>AppConstants.MaxGamePaneHeight)
         {
             return false;
         }

@@ -25,6 +25,11 @@ public class ScoreHelper {
         return String.format("%s",this._score);
     }
 
+    protected String GetLevelAsString()
+    {
+        return String.format("%s",this._level);
+    }
+
     protected int GetLevel()
     {
         return this._level;
