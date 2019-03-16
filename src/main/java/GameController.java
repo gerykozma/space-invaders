@@ -107,6 +107,9 @@ public class GameController {
                 case R:
                     this.RestartGame();
                     break;
+                case ESCAPE:
+                    System.exit(0);
+                    break;
             }
         });
 
