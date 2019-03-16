@@ -22,12 +22,14 @@ public class GameController {
     private Label _scoreLabel;
     private Label _levelLabel;
     private ScoreHelper _scoreHelper;
-
+    private double _playerShootCooldown=0.0;
     private AnimationTimer _timer;
     private boolean _isPaused = false;
+    private boolean _playerMoveLeft=false;
+    private boolean _playerMoveRight=false;
 
-    private int _enemyFireRate;
     private boolean _enemyMoveToRight=false;
+    private int _enemyMoveTimer=0;
     private Random _randomGenerator;
 
     public GameController(Stage primaryStage) throws IOException, IllegalArgumentException {
@@ -81,11 +83,14 @@ public class GameController {
         {
             switch (event.getCode()) {
                 case LEFT:
-                    this.TryPlayerMoveLeft();
+
+                    this._playerMoveLeft=true;
+                    this._playerMoveRight=false;
                     break;
 
                 case RIGHT:
-                    this.TryPlayerMoveRight();
+                    this._playerMoveRight=true;
+                    this._playerMoveLeft=false;
                     break;
 
                 case SPACE:
@@ -109,8 +114,11 @@ public class GameController {
         EventLogger.info("Game started.");
     }
 
-    private void EndGame() {
-        _timer.stop();
+    private void EndGame()
+    {
+        this._timer.stop();
+        this._isPaused=true;
+        //SaveHighScore
         EventLogger.info("Game over.");
     }
 
@@ -120,6 +128,14 @@ public class GameController {
         this.UpdatePlayerTorpedos();
         this.UpDateEnemyTorpedos();
 
+        if (this._playerMoveLeft) {
+            this.TryPlayerMoveLeft();
+        }
+
+        if (this._playerMoveRight) {
+            this.TryPlayerMoveRight();
+        }
+
         //Check if player is alive
         this.CheckPlayerStatus();
 
@@ -127,15 +143,25 @@ public class GameController {
         this.RemoveDeadObjects();
 
         //Check if there are remaining enemies, else increase level
-        if (!this.AnyEnemyShipAlive()) {
+        if (!this.AnyEnemyShipAlive())
+        {
             this.IncreaseLevel();
         }
 
         //If any enemy is alive, shoot a random torpedo and move
-        this.EnemyShootTorpedos();
+        if(_enemyMoveTimer % 50 == 0)
+        {
+            this.EnemyShootTorpedos();
+        }
 
         this.MoveEnemyShips();
 
+        if (this._playerShootCooldown > 0.0)
+        {
+            this._playerShootCooldown-=0.1;
+        }
+
+        this._enemyMoveTimer++;
     }
 
     private void MoveEnemyShips()
@@ -146,7 +172,7 @@ public class GameController {
                 .map(o->(SpaceShip)o)
                 .collect(Collectors.toList());
 
-        if(_enemyFireRate%100==0)
+        if(this._enemyMoveTimer % 100 == 0)
         {
             this._enemyMoveToRight=!this._enemyMoveToRight;
         }
@@ -160,7 +186,6 @@ public class GameController {
             else
             {
                 enemyShip.TryMoveLeft();
-
             }
         }
     }
@@ -173,13 +198,13 @@ public class GameController {
                .map(o->(SpaceShip)o)
                 .collect(Collectors.toList());
 
-       if(this._enemyFireRate % 200 == 0)
+       for (SpaceShip enemy : enemyShips)
        {
-            int randomIndex = this._randomGenerator.nextInt(enemyShips.size());
-            this.Shoot(enemyShips.get(randomIndex));
+           if(_randomGenerator.nextDouble()>0.5)
+           {
+               this.Shoot(enemy);
+           }
        }
-
-        this._enemyFireRate++;
     }
 
     private boolean AnyEnemyShipAlive() {
@@ -270,7 +295,7 @@ public class GameController {
 
         //Remove left-over objects
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
-        this._enemyFireRate =0;
+        this._enemyMoveTimer =0;
 
         this._levelLabel.setText(this._scoreHelper.GetLevelAsString());
 
@@ -292,8 +317,10 @@ public class GameController {
     }
 
     private void TryPlayerShoot() {
-        if (!this._isPaused) {
+        if (!this._isPaused && this._playerShootCooldown <= 0.0)
+        {
             this.Shoot(this._player);
+            this._playerShootCooldown=1.5;
             EventLogger.debug("Player shot torpedo.");
         }
     }

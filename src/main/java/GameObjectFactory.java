@@ -21,8 +21,8 @@ public final class GameObjectFactory {
         ArrayList<SpaceShip> ships = new ArrayList<>();
         for (int i = 0; i < numberOfEnemiesToCreate; i++) {
             ConfigObject config = new ConfigObject(
-                    100 + i * 100,
-                    AppConstants.EnemyShipYCoordinate + i * 100,
+                    100 + i * 50,
+                    AppConstants.EnemyShipYCoordinate + i * 50,
                     AppConstants.EnemyShipHeight,
                     AppConstants.EnemyShipWidth,
                     GameObjectType.EnemyShip,
