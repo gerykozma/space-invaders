@@ -1,9 +1,9 @@
 
 public class Torpedo extends ObservableGameObject
 {
-    protected Torpedo(ConfigObject config)
+    protected Torpedo(GameObject gameObject)
     {
-        super(config);
+        super(gameObject);
     }
 
     @Override

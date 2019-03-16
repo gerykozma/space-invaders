@@ -3,12 +3,12 @@ import java.io.File;
 
 public class SavedGameHelper
 {
-    protected static final boolean SaveGame(String filePath, Save save)
+    protected static final boolean SaveGame(String filePath, GameLevel save)
     {
         return false;
     }
 
-    protected static final Save LoadGame(String filePath)
+    protected static final GameLevel LoadGame(String filePath)
     {
         return  null;
     }

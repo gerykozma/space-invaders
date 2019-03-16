@@ -1,14 +1,17 @@
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public abstract class ObservableGameObject extends Rectangle
+public abstract class ObservableGameObject extends ImageView
 {
     private GameObject _gameObject;
 
-    protected ObservableGameObject(ConfigObject config)
+    protected ObservableGameObject(GameObject gameObject)
     {
-        super(config.getWidth(), config.getHeight(), config.getColor());
-        this._gameObject = new GameObject(config.getXCoordinate(), config.getYCoordinate(), config.getType());
+        super(ObjectTypeToImage(gameObject.GetType()));
 
+        this._gameObject = gameObject;
         this.setTranslateX(this._gameObject.GetX());
         this.setTranslateY(this._gameObject.GetY());
     }
@@ -61,5 +64,22 @@ public abstract class ObservableGameObject extends Rectangle
     public GameObject GetGameObject()
     {
         return this._gameObject;
+    }
+
+    private static final Image ObjectTypeToImage(GameObjectType type)
+    {
+        switch (type)
+        {
+            case PlayerShip:
+                return new Image("PlayerShip.png");
+            case EnemyShip:
+                return new Image("AlienShip.png");
+            case PlayerTorpedo:
+                return new Image("PlayerRocket.png");
+            case EnemyTorpedo:
+                return new Image("AlienRocket.png");
+                default:
+                    return null;
+        }
     }
 }

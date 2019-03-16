@@ -1,12 +1,16 @@
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -62,7 +66,7 @@ public class GameController {
         Scene mainScene = new Scene(root);
         this._gamePane = (Pane) mainScene.lookup("#GamePane");
         this._scoreLabel = (Label) mainScene.lookup("#ScoreLabel");
-        this._levelLabel=(Label) mainScene.lookup("#LevelLabel");
+        this._levelLabel = (Label) mainScene.lookup("#LevelLabel");
 
         if (this._gamePane == null) {
             throw new UnsupportedOperationException("GamePane was null. Error while loading element from fxml.");
@@ -84,13 +88,13 @@ public class GameController {
             switch (event.getCode()) {
                 case LEFT:
 
-                    this._playerMoveLeft=true;
-                    this._playerMoveRight=false;
+                    this._playerMoveLeft = true;
+                    this._playerMoveRight = false;
                     break;
 
                 case RIGHT:
-                    this._playerMoveRight=true;
-                    this._playerMoveLeft=false;
+                    this._playerMoveRight = true;
+                    this._playerMoveLeft = false;
                     break;
 
                 case SPACE:
@@ -100,6 +104,9 @@ public class GameController {
                 case P:
                     this.PauseGame();
                     break;
+                case R:
+                    this.RestartGame();
+                    break;
             }
         });
 
@@ -107,19 +114,42 @@ public class GameController {
         primaryStage.show();
     }
 
-    public void StartGame() {
-
-        this.InitNewLevel();
+    public void StartGame(GameLevel gameStance)
+    {
+        this.InitNewLevel(gameStance);
         _timer.start();
         EventLogger.info("Game started.");
     }
 
-    private void EndGame()
+    private void RestartGame()
+    {
+        EventLogger.info("Game Restarted");
+        this._scoreHelper= new ScoreHelper(0,1);
+        this.StartGame(new GameLevel(
+                null,
+                this._scoreHelper.GetScore(),
+                this._scoreHelper.GetLevel()));
+    }
+
+    private void EndGame(boolean playerWon)
     {
         this._timer.stop();
         this._isPaused=true;
         //SaveHighScore
         EventLogger.info("Game over.");
+
+        String message="";
+        if(playerWon)
+        {
+            message = String.format("Congratulations! You beat the game with a score of: %s", this._scoreHelper.GetScoreAsString());
+            EventLogger.info("Player won.");
+        }
+        else
+        {
+            message = String.format("You are Dead! You made it to level: %s", this._scoreHelper.GetLevelAsString());
+            EventLogger.info(String.format("Player lost the game. Made it to level %s", this._scoreHelper.GetScoreAsString()));
+        }
+        JOptionPane.showMessageDialog(null, message);
     }
 
     private void UpdateScene() {
@@ -136,11 +166,11 @@ public class GameController {
             this.TryPlayerMoveRight();
         }
 
-        //Check if player is alive
-        this.CheckPlayerStatus();
-
         //Remove Dead Objects from the GamePane
         this.RemoveDeadObjects();
+
+        //Check if player is alive
+        this.CheckPlayerStatus();
 
         //Check if there are remaining enemies, else increase level
         if (!this.AnyEnemyShipAlive())
@@ -153,6 +183,7 @@ public class GameController {
         {
             this.EnemyShootTorpedos();
         }
+
 
         this.MoveEnemyShips();
 
@@ -172,22 +203,25 @@ public class GameController {
                 .map(o->(SpaceShip)o)
                 .collect(Collectors.toList());
 
-        if(this._enemyMoveTimer % 100 == 0)
-        {
-            this._enemyMoveToRight=!this._enemyMoveToRight;
-        }
-
         for(SpaceShip enemyShip : enemyShips)
         {
-            if(this._enemyMoveToRight)
-            {
-                enemyShip.TryMoveRight();
+
+                if (this._enemyMoveToRight)
+                {
+                    if(!enemyShip.TryMoveRight())
+                    {
+                        this._enemyMoveToRight=!this._enemyMoveToRight;
+                    }
+                }
+                else
+                {
+                    if(!enemyShip.TryMoveLeft())
+                    {
+                        this._enemyMoveToRight=!this._enemyMoveToRight;
+                    }
+                }
             }
-            else
-            {
-                enemyShip.TryMoveLeft();
-            }
-        }
+
     }
 
     private void EnemyShootTorpedos()
@@ -222,7 +256,10 @@ public class GameController {
         if(this._scoreHelper.GetLevel()< AppConstants.BossBattleLevelNumber)
         {
             this._scoreHelper.IncreaseLevel();
-            this.InitNewLevel();
+            this.InitNewLevel(new GameLevel(
+                    null,
+                    this._scoreHelper.GetScore(),
+                    this._scoreHelper.GetLevel()));
         }
     }
 
@@ -230,16 +267,20 @@ public class GameController {
         return this._gamePane.getChildren().stream().map(o -> (ObservableGameObject) o).collect(Collectors.toList());
     }
 
-    private void UpdatePlayerTorpedos() {
-        for (ObservableGameObject observableGameObject : this.GetGameObjects()) {
-            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.PlayerTorped)) {
+    private void UpdatePlayerTorpedos()
+    {
+        for (ObservableGameObject observableGameObject : this.GetGameObjects())
+        {
+            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.PlayerTorpedo))
+            {
                 observableGameObject.TryMoveUp();
                 this.GetGameObjects()
                         .stream()
                         .filter(enemy -> enemy.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
                         .forEach(enemy ->
                         {
-                            if (observableGameObject.getBoundsInParent().intersects(enemy.getBoundsInParent())) {
+                            if (observableGameObject.getBoundsInParent().intersects(enemy.getBoundsInParent()))
+                            {
                                 enemy.SetDeath();
                                 observableGameObject.SetDeath();
                                 this._scoreHelper.IncreaseScore();
@@ -273,7 +314,7 @@ public class GameController {
         if (this._player.GetGameObject().GetIsDead())
         {
             EventLogger.info("Player is Dead.");
-            this.EndGame();
+            this.EndGame(false);
         }
     }
 
@@ -291,22 +332,32 @@ public class GameController {
         EventLogger.debug("Removed dead objects.");
     }
 
-    private void InitNewLevel() {
-
+    private void InitNewLevel(GameLevel gameLevel)
+    {
         //Remove left-over objects
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
         this._enemyMoveTimer =0;
+        this._isPaused=false;
 
-        this._levelLabel.setText(this._scoreHelper.GetLevelAsString());
+        this._levelLabel.setText(String.format("%s",gameLevel.getLevel()));
+        this._scoreLabel.setText(String.format("%s", gameLevel.getScore()));
 
-        this._player = GameObjectFactory.CreatePlayerShip();
-        EventLogger.debug("Player created.");
+        if(gameLevel.getGameObjects() == null)
+        {
+            this._player = GameObjectFactory.CreatePlayerShip();
+            EventLogger.debug("Player created.");
 
-        this._gamePane.getChildren().add(_player);
-        EventLogger.debug("PLayer ship added to GamePane.");
+            this._gamePane.getChildren().add(_player);
+            EventLogger.debug("PLayer ship added to GamePane.");
 
-        this._gamePane.getChildren().addAll(GameObjectFactory.CreateEnemyShips(this._scoreHelper.GetLevel()));
-        EventLogger.debug("Enemy ships added to GamePane.");
+            this._gamePane.getChildren().addAll(GameObjectFactory.CreateEnemyShips(gameLevel.getLevel()));
+            EventLogger.debug("Enemy ships added to GamePane.");
+        }
+        else
+        {
+            //Load Game
+        }
+
     }
 
     private void Shoot(SpaceShip shooter)

@@ -5,8 +5,10 @@ public class GameObject
     private double _xCoordinate;
     private double _yCoordinate;
     private boolean _isDead;
+    private int _height;
+    private int _width;
 
-    protected GameObject(double x, double y, GameObjectType type)
+    protected GameObject(double x, double y, int width, int height, GameObjectType type)
     {
         if (x < 0 || x > AppConstants.MaxGamePaneWidth)
         {
@@ -18,9 +20,21 @@ public class GameObject
             throw new IllegalArgumentException("Invalid Y value.");
         }
 
+        if(width <= 0)
+        {
+            throw new IllegalArgumentException("Invalid width value.");
+        }
+
+        if(height <= 0)
+        {
+            throw new IllegalArgumentException("Invalid height value.");
+        }
+
         this._type=type;
         this._xCoordinate = x;
         this._yCoordinate = y;
+        this._width=width;
+        this._height=height;
         this._isDead = false;
     }
 
@@ -46,7 +60,7 @@ public class GameObject
 
     protected boolean TrySetX(double x)
     {
-        if(x<0 || x + AppConstants.PlayerShipWidth >AppConstants.MaxGamePaneWidth )
+        if(x<0 || x + AppConstants.PlayerShipWidth > AppConstants.MaxGamePaneWidth )
         {
             return false;
         }
@@ -67,5 +81,15 @@ public class GameObject
     protected void SetToDead()
     {
         this._isDead=true;
+    }
+
+    public int GetWidth()
+    {
+        return _width;
+    }
+
+    public int GetHeight()
+    {
+        return _height;
     }
 }

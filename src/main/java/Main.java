@@ -8,7 +8,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception
     {
         GameController game = new GameController(primaryStage);
-        game.StartGame();
+        game.StartGame(new GameLevel(null, 0, 1));
     }
 
     public static void main(String[] args)

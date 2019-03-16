@@ -1,8 +1,8 @@
 
 public class SpaceShip extends ObservableGameObject
 {
-    public SpaceShip(ConfigObject config)
+    public SpaceShip(GameObject gameObject)
     {
-        super(config);
+        super(gameObject);
     }
 }

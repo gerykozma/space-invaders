@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Save
+public class GameLevel
 {
     private ArrayList<GameObject> _gameObjects;
     private int _score;
     private int _level;
 
-    protected Save(ArrayList<GameObject> gameObjects, int score, int level)
+    protected GameLevel(ArrayList<GameObject> gameObjects, int score, int level)
     {
         this._gameObjects=gameObjects;
         this._score=score;

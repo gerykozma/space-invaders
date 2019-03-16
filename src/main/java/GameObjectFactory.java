@@ -1,3 +1,5 @@
+import com.sun.javafx.iio.ImageLoader;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import org.apache.log4j.Logger;
 
@@ -6,28 +8,26 @@ import java.util.ArrayList;
 public final class GameObjectFactory {
     private final static Logger EventLogger = Logger.getLogger(GameObjectFactory.class);
 
-    public static final SpaceShip CreatePlayerShip() {
-        ConfigObject playerConfig = new ConfigObject(
+    public static final SpaceShip CreatePlayerShip()
+    {
+        return new SpaceShip(new GameObject(
                 AppConstants.PlayerShipXCoordinate,
                 AppConstants.PlayerShipYCoordinate,
-                AppConstants.PlayerShipHeight,
                 AppConstants.PlayerShipWidth,
-                GameObjectType.PlayerShip,
-                Color.BLUE);
-        return new SpaceShip(playerConfig);
+                AppConstants.PlayerShipHeight,
+                GameObjectType.PlayerShip));
     }
 
     public static final SpaceShip[] CreateEnemyShips(int numberOfEnemiesToCreate) {
         ArrayList<SpaceShip> ships = new ArrayList<>();
         for (int i = 0; i < numberOfEnemiesToCreate; i++) {
-            ConfigObject config = new ConfigObject(
+            GameObject gameObject = new GameObject(
                     100 + i * 50,
                     AppConstants.EnemyShipYCoordinate + i * 50,
-                    AppConstants.EnemyShipHeight,
                     AppConstants.EnemyShipWidth,
-                    GameObjectType.EnemyShip,
-                    Color.RED);
-            ships.add(new SpaceShip(config));
+                    AppConstants.EnemyShipHeight,
+                    GameObjectType.EnemyShip);
+            ships.add(new SpaceShip(gameObject));
             EventLogger.debug("Enemy ship created.");
         }
 
@@ -49,19 +49,19 @@ public final class GameObjectFactory {
                 torpedoType=GameObjectType.EnemyTorpedo;
                 break;
             case PlayerShip:
-                torpedoType=GameObjectType.PlayerTorped;
+                torpedoType=GameObjectType.PlayerTorpedo;
                 break;
                 default:
                     return null;
         }
 
-        ConfigObject torpedoConfig = new ConfigObject(
+        GameObject gameObject = new GameObject(
                 shooter.GetGameObject().GetX()+20,
                 shooter.GetGameObject().GetY()-10,
-                15,
                 5,
-                torpedoType,
-                Color.BLACK);
-        return new Torpedo(torpedoConfig);
+                15,
+                torpedoType);
+
+        return new Torpedo(gameObject);
     }
 }
