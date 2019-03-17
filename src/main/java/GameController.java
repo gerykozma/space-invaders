@@ -7,10 +7,12 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -110,6 +112,9 @@ public class GameController {
                 case ESCAPE:
                     System.exit(0);
                     break;
+                case L:
+                    this.LoadGame(primaryStage);
+                    break;
             }
         });
 
@@ -124,6 +129,21 @@ public class GameController {
         EventLogger.info("Game started.");
     }
 
+    private void LoadGame(Stage root)
+    {
+        this._isPaused=true;
+        this._timer.stop();
+
+        FileChooser fileChooser = new FileChooser();
+        File file = fileChooser.showOpenDialog(root);
+        if(file == null)
+        {
+            return;
+        }
+
+        SavedGameHelper.LoadGame(file.getPath());
+    }
+
     private void RestartGame()
     {
         EventLogger.info("Game Restarted");
@@ -136,12 +156,27 @@ public class GameController {
 
     private void EndGame(boolean playerWon)
     {
-        this._timer.stop();
-        this._isPaused=true;
-        //SaveHighScore
         EventLogger.info("Game over.");
 
-        String message="";
+        this._timer.stop();
+        this._isPaused=true;
+
+        EventLogger.debug("Saving player score..");
+        try
+        {
+            if(HighScoreHelper.SaveScore(this._scoreHelper.GetScore()))
+            {
+                JOptionPane.showMessageDialog(
+                        null,
+                        String.format("New HIGH SCORE: %s !!", this._scoreHelper.GetScore()));
+            }
+        }catch (IOException ex)
+        {
+            EventLogger.warn("Something went wrong while saving player score." +
+                    " Score has not been saved. Details: %s", ex);
+        }
+
+        String message;
         if(playerWon)
         {
             message = String.format("Congratulations! You beat the game with a score of: %s", this._scoreHelper.GetScoreAsString());
@@ -263,6 +298,10 @@ public class GameController {
                     null,
                     this._scoreHelper.GetScore(),
                     this._scoreHelper.GetLevel()));
+        }
+        else if(this._scoreHelper.GetLevel() == AppConstants.BossBattleLevelNumber)
+        {
+            this.EndGame(true);
         }
     }
 
