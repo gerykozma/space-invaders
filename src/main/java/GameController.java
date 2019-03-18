@@ -14,6 +14,7 @@ import org.apache.log4j.lf5.util.Resource;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,6 +123,9 @@ public class GameController {
                 case L:
                     this.LoadGame(primaryStage);
                     break;
+                case S:
+                    this.SaveGame(primaryStage);
+                    break;
             }
         });
 
@@ -142,14 +146,64 @@ public class GameController {
         this._isPaused=true;
         this._timer.stop();
 
-        FileChooser fileChooser = new FileChooser();
-        File file = fileChooser.showOpenDialog(root);
-        if(file == null)
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setAcceptAllFileFilterUsed(false);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                "SpaceInvaders saved game",
+                "*.save");
+        fileChooser.addChoosableFileFilter(filter);
+
+        int response = fileChooser.showOpenDialog(null);
+        if(response != JFileChooser.APPROVE_OPTION)
         {
+            EventLogger.debug("User cancelled load operation.");
             return;
         }
 
-        SavedGameHelper.LoadGame(file.getPath());
+        GameLevel loadedLevel = SavedGameHelper.LoadGame(fileChooser.getSelectedFile().getPath());
+        if(loadedLevel!=null)
+        {
+            EventLogger.info("Game level loaded from file.");
+            this.InitNewLevel(loadedLevel);
+        }
+        EventLogger.error("Failed to load game level.");
+    }
+
+    private void SaveGame(Stage root)
+    {
+        EventLogger.info("Saving game..");
+        this._isPaused=true;
+        this._timer.stop();
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        int response = fileChooser.showOpenDialog(null);
+        if(response != JFileChooser.APPROVE_OPTION)
+        {
+            EventLogger.debug("User cancelled save operation.");
+            return;
+        }
+
+        ArrayList<GameObject> gameObjects=this._gamePane
+                .getChildren()
+                .stream()
+                .map(o-> ((ObservableGameObject)o).GetGameObject())
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        GameLevel level=new GameLevel(gameObjects, this._scoreHelper.GetScore(),this._scoreHelper.GetLevel());
+
+        String message;
+        String folderPathToSave=fileChooser.getSelectedFile().getPath();
+        if(SavedGameHelper.SaveGame(folderPathToSave, level))
+        {
+            message="Game saved successfully.";
+        }
+        else
+        {
+            message="Failed to save game.";
+        }
+        JOptionPane.showMessageDialog(null, message);
     }
 
     private void RestartGame()
