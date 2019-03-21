@@ -1,21 +1,13 @@
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
-import org.apache.log4j.lf5.util.Resource;
-import org.apache.log4j.xml.DOMConfigurator;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,6 +15,9 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * Main controller class
+ */
 public class GameController {
 
     private final static Logger EventLogger = Logger.getLogger(GameController.class);
@@ -42,14 +37,17 @@ public class GameController {
     private int _enemyMoveTimer = 0;
     private Random _randomGenerator;
 
-    public GameController(Stage primaryStage) throws IOException, IllegalArgumentException
+
+    /** Creates an initialized GameController object.
+     * @param primaryStage the main stage(window)
+     * @throws IOException when the fxml file cannot be loaded
+     * @throws IllegalArgumentException when primaryStage is null
+     */
+    protected GameController(Stage primaryStage) throws IOException, IllegalArgumentException
     {
-
-       // DOMConfigurator.configure("log4j2.xml");
-
         if (primaryStage == null) {
             EventLogger.debug("primarystage was null. ");
-            throw new IllegalArgumentException("primaryStage cannor be null. Pass a valid stage to build upon.");
+            throw new IllegalArgumentException("primaryStage cannot be null. Pass a valid stage to build upon.");
         }
 
         AnchorPane root;
@@ -121,10 +119,10 @@ public class GameController {
                     System.exit(0);
                     break;
                 case L:
-                    this.LoadGame(primaryStage);
+                    this.LoadGame();
                     break;
                 case S:
-                    this.SaveGame(primaryStage);
+                    this.SaveGame();
                     break;
             }
         });
@@ -133,14 +131,14 @@ public class GameController {
         primaryStage.show();
     }
 
-    public void StartGame(GameLevel gameStance)
+    protected void StartGame(GameLevel gameStance)
     {
         this.InitNewLevel(gameStance);
         _timer.start();
         EventLogger.info("Game started.");
     }
 
-    private void LoadGame(Stage root)
+    private void LoadGame()
     {
         EventLogger.info("Loading game..");
         this._isPaused=true;
@@ -150,7 +148,7 @@ public class GameController {
         fileChooser.setAcceptAllFileFilterUsed(false);
         FileNameExtensionFilter filter = new FileNameExtensionFilter(
                 "SpaceInvaders saved game",
-                "*.save");
+                "save");
         fileChooser.addChoosableFileFilter(filter);
 
         int response = fileChooser.showOpenDialog(null);
@@ -165,11 +163,12 @@ public class GameController {
         {
             EventLogger.info("Game level loaded from file.");
             this.InitNewLevel(loadedLevel);
+            return;
         }
         EventLogger.error("Failed to load game level.");
     }
 
-    private void SaveGame(Stage root)
+    private void SaveGame()
     {
         EventLogger.info("Saving game..");
         this._isPaused=true;
@@ -356,7 +355,7 @@ public class GameController {
 
     private void IncreaseLevel()
     {
-        if(this._scoreHelper.GetLevel()< AppConstants.BossBattleLevelNumber)
+        if(this._scoreHelper.GetLevel()< AppConstants.MaxLevelNumber)
         {
             EventLogger.info("Increasing game level..");
             this._scoreHelper.IncreaseLevel();
@@ -365,7 +364,7 @@ public class GameController {
                     this._scoreHelper.GetScore(),
                     this._scoreHelper.GetLevel()));
         }
-        else if(this._scoreHelper.GetLevel() == AppConstants.BossBattleLevelNumber)
+        else if(this._scoreHelper.GetLevel() == AppConstants.MaxLevelNumber)
         {
             this.EndGame(true);
         }
@@ -387,7 +386,7 @@ public class GameController {
                         .filter(enemy -> enemy.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
                         .forEach(enemy ->
                         {
-                            if (observableGameObject.getBoundsInParent().intersects(enemy.getBoundsInParent()))
+                            if (enemy.GetGameObject().IntersectLowerBounds(observableGameObject.GetGameObject()))
                             {
                                 enemy.SetDeath();
                                 observableGameObject.SetDeath();
@@ -407,7 +406,7 @@ public class GameController {
             if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.EnemyTorpedo))
             {
                 observableGameObject.TryMoveDown();
-                if (observableGameObject.getBoundsInParent().intersects(this._player.getBoundsInParent()))
+                if (this._player.GetGameObject().IntersectUpperBounds(observableGameObject.GetGameObject()))
                 {
                     this._player.SetDeath();
                     observableGameObject.SetDeath();
@@ -453,13 +452,13 @@ public class GameController {
 
         if(gameLevel.getGameObjects() == null)
         {
-            this._player = GameObjectFactory.CreatePlayerShip();
+            this._player = ObservableGameObjectFactory.CreatePlayerShip();
             EventLogger.debug("Player created.");
 
             this._gamePane.getChildren().add(_player);
             EventLogger.debug("PLayer ship added to GamePane.");
 
-            this._gamePane.getChildren().addAll(GameObjectFactory.CreateEnemyShips(gameLevel.getLevel()));
+            this._gamePane.getChildren().addAll(ObservableGameObjectFactory.CreateEnemyShips(gameLevel.getLevel()));
             EventLogger.debug("Enemy ships added to GamePane.");
         }
         else
@@ -482,6 +481,8 @@ public class GameController {
                         break;
                 }
 
+                this._scoreHelper=new ScoreHelper(gameLevel.getScore(), gameLevel.getLevel());
+
                 this._gamePane.getChildren().addAll(objectsLoaded);
                 EventLogger.info("Saved game loaded.");
             }
@@ -490,7 +491,7 @@ public class GameController {
 
     private void Shoot(SpaceShip shooter)
     {
-        Torpedo torpedo = GameObjectFactory.CreateTorpedo(shooter);
+        Torpedo torpedo = ObservableGameObjectFactory.CreateTorpedo(shooter);
         this._gamePane.getChildren().add(torpedo);
         EventLogger.debug(String.format("Torpedo shot by %s.", shooter.toString()));
     }
@@ -515,6 +516,7 @@ public class GameController {
             this._player.TryMoveRight();
         }
     }
+
 
     private void PauseGame()
     {

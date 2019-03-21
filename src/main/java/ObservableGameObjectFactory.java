@@ -1,12 +1,10 @@
-import com.sun.javafx.iio.ImageLoader;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
-public final class GameObjectFactory {
-    private final static Logger EventLogger = Logger.getLogger(GameObjectFactory.class);
+public final class ObservableGameObjectFactory
+{
+    private final static Logger EventLogger = Logger.getLogger(ObservableGameObjectFactory.class);
 
     public static final SpaceShip CreatePlayerShip()
     {
@@ -22,7 +20,7 @@ public final class GameObjectFactory {
         ArrayList<SpaceShip> ships = new ArrayList<>();
         for (int i = 0; i < numberOfEnemiesToCreate; i++) {
             GameObject gameObject = new GameObject(
-                    100 + i * 50,
+                    AppConstants.EnemyShipXCoordinate + i * 50,
                     AppConstants.EnemyShipYCoordinate + i * 50,
                     AppConstants.EnemyShipWidth,
                     AppConstants.EnemyShipHeight,
@@ -58,8 +56,8 @@ public final class GameObjectFactory {
         GameObject gameObject = new GameObject(
                 shooter.GetGameObject().GetX()+20,
                 shooter.GetGameObject().GetY()-10,
-                5,
-                15,
+                25,
+                25,
                 torpedoType);
 
         return new Torpedo(gameObject);

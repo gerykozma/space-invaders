@@ -15,7 +15,7 @@ public class Torpedo extends ObservableGameObject
     @Override
     public boolean TryMoveUp()
     {
-        if(this.getTranslateY() - 5 > 0)
+        if(this.GetGameObject().TrySetY(this.GetGameObject().GetY() - 5 ))
         {
             this.setTranslateY(this.getTranslateY() - 5);
             return true;
@@ -30,7 +30,7 @@ public class Torpedo extends ObservableGameObject
     @Override
     public boolean TryMoveDown()
     {
-        if(this.getTranslateY() + 5 < AppConstants.MaxGamePaneHeight)
+        if(this.GetGameObject().TrySetY(this.GetGameObject().GetY() + 5))
         {
             this.setTranslateY(this.getTranslateY() + 5);
             return true;

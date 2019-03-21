@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -24,7 +26,7 @@ public class SavedGameHelper
         }
 
         String json = gson.toJson(save);
-        String fileName= String.format("SavedGame_%s.save",LocalDate.now().toString());
+        String fileName= String.format("SavedGame_%s.save", LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
         try {
             Files.write(Paths.get(filePath, fileName), json.getBytes());
         }catch (IOException ex)

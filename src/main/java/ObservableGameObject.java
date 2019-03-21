@@ -1,5 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -14,6 +15,8 @@ public abstract class ObservableGameObject extends ImageView
         this._gameObject = gameObject;
         this.setTranslateX(this._gameObject.GetX());
         this.setTranslateY(this._gameObject.GetY());
+        this.setFitHeight(this._gameObject.GetHeight());
+        this.setFitWidth(this._gameObject.GetWidth());
     }
 
     public boolean TryMoveLeft()

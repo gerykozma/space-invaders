@@ -2,7 +2,6 @@ import org.apache.log4j.Logger;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -13,7 +12,7 @@ public final class HighScoreHelper
 {
     private static final Logger EventLogger = Logger.getLogger(HighScoreHelper.class);
 
-    public static final boolean SaveScore(Integer score) throws IOException
+    public static boolean SaveScore(Integer score) throws IOException
     {
         List<Integer> playerScores;
         try
@@ -22,7 +21,8 @@ public final class HighScoreHelper
         }
         catch (IOException ex)
         {
-           throw ex;
+            EventLogger.error(ex);
+            throw ex;
         }
 
         playerScores.add(score);
@@ -43,14 +43,14 @@ public final class HighScoreHelper
             throw ex;
         }
 
-        if(sortedScores.get(0) == score)
+        if(sortedScores.get(0).equals(score))
         {
             return true;
         }
         return false;
     }
 
-    private static final ArrayList<Integer> GetPlayerScoresFromFile() throws IOException
+    private static ArrayList<Integer> GetPlayerScoresFromFile() throws IOException
     {
         File highScores= new File("PlayerScores.score");
         if(!highScores.exists())
@@ -73,7 +73,7 @@ public final class HighScoreHelper
         return entries;
     }
 
-    private static final Integer TryParseStringToInteger(String line)
+    private static Integer TryParseStringToInteger(String line)
     {
         try
         {
@@ -81,7 +81,8 @@ public final class HighScoreHelper
         }
         catch (NumberFormatException ex)
         {
-            return new Integer(0);
+            EventLogger.warn(String.format("Unable to parse score. %s",ex));
+            return 0;
         }
     }
 }
