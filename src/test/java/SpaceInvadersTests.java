@@ -1,9 +1,8 @@
-import junit.framework.AssertionFailedError;
-import org.junit.Assert;
+import Model.*;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -96,7 +95,13 @@ public class SpaceInvadersTests {
     @Test
     public void LoadGameTest()
     {
+        String path = String.format("TestSave.save");
 
+        File file = new File(path);
+        file.getAbsolutePath();
+        if(file.exists())
+        System.out.println(file.getAbsolutePath());
+        //E:\JavaDev\space-invaders\src\test\java\TestFiles\TestSave.save
     }
 
     @Test

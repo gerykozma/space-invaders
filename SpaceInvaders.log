@@ -1,0 +1,2253 @@
+DEBUG GameController - Removing left-over objects..
+DEBUG GameController - Player created.
+DEBUG GameController - PLayer ship added to GamePane.
+DEBUG ObservableGameObjectFactory - Enemy ship created.
+DEBUG GameController - Enemy ships added to GamePane.
+INFO  GameController - Game started.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@6c3c3a2d[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@6c3c3a2d[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@6c3c3a2d[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Torpedo shot by SpaceShip@3322bbae[styleClass=image-view].
+DEBUG GameController - Player shot torpedo.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@6c3c3a2d[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+INFO  GameController - Enemy ship destroyed.
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+INFO  GameController - Increasing game level..
+DEBUG GameController - Removing left-over objects..
+DEBUG GameController - Player created.
+DEBUG GameController - PLayer ship added to GamePane.
+DEBUG ObservableGameObjectFactory - Enemy ship created.
+DEBUG ObservableGameObjectFactory - Enemy ship created.
+DEBUG GameController - Enemy ships added to GamePane.
+DEBUG GameController - Torpedo shot by SpaceShip@75f0f563[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@28d4b503[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Torpedo shot by SpaceShip@75f0f563[styleClass=image-view].
+DEBUG GameController - Enemy shoot a torpedo.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Updating scene..
+DEBUG GameController - Removing dead objects.
+DEBUG GameController - Removed dead objects.
+DEBUG GameController - Moving enemies.
+DEBUG GameController - Game Paused
