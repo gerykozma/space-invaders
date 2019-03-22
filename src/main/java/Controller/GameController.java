@@ -287,8 +287,8 @@ public class GameController {
     private void UpdateScene() {
         EventLogger.debug("Updating scene..");
 
-        this.UpdatePlayerTorpedos();
-        this.UpDateEnemyTorpedos();
+        this.UpdatePlayerTorpedoes();
+        this.UpDateEnemyTorpedoes();
 
         if (this._playerMoveLeft) {
             this.TryPlayerMoveLeft();
@@ -391,6 +391,10 @@ public class GameController {
         return false;
     }
 
+    /**
+     * Creates a new level with +1 enemy ship compared to the beginning of the current level. If
+     * the level count reaches it's maximum the game is ended here and the player is victorious.
+     * */
     private void IncreaseLevel()
     {
         if(this._scoreHelper.GetLevel()< AppConstants.MaxLevelNumber)
@@ -408,11 +412,17 @@ public class GameController {
         }
     }
 
+    /**
+     * Maps the children of GamePane to List.
+     * */
     private List<ObservableGameObject> GetGameObjects() {
         return this._gamePane.getChildren().stream().map(o -> (ObservableGameObject) o).collect(Collectors.toList());
     }
 
-    private void UpdatePlayerTorpedos()
+    /**
+     * Moves the torpedoes shot by the player and checks if there is a hit.
+     * */
+    private void UpdatePlayerTorpedoes()
     {
         for (ObservableGameObject playerTorpedo : this.GetGameObjects())
         {
@@ -437,7 +447,10 @@ public class GameController {
         }
     }
 
-    private void UpDateEnemyTorpedos()
+    /**
+     * Moves torpedoes shot by enemy ships and checks if there is a hit.
+     * */
+    private void UpDateEnemyTorpedoes()
     {
         for (ObservableGameObject enemyTorpedo : this.GetGameObjects())
         {
@@ -454,6 +467,9 @@ public class GameController {
         }
     }
 
+    /**
+     * Checks whether the player is alive. If not, the game is ended.
+     * */
     private void CheckPlayerStatus()
     {
         if (this._player.GetGameObject().GetIsDead())
@@ -463,6 +479,11 @@ public class GameController {
         }
     }
 
+    /**
+     * Removes objects from the UI marked as 'dead'. An object is marked 'dead' when one of the following occurs:
+     * torpedo reached GamePane boundary and failed to hit anything, enemy ship was hit by player's torpedo,
+     * player was hit by enemy torpedo.
+     * */
     private void RemoveDeadObjects()
     {
         EventLogger.debug("Removing dead objects.");
@@ -477,13 +498,16 @@ public class GameController {
         EventLogger.debug("Removed dead objects.");
     }
 
+    /**
+     * Initializes a new game level. It can be used to load any game level.
+     * */
     private void InitNewLevel(GameLevel gameLevel)
     {
-        //Remove left-over objects
+        //Remove left-over objects and data
         EventLogger.debug("Removing left-over objects..");
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
-        this._enemyMoveTimer =0;
-        this._isPaused=false;
+        this._enemyMoveTimer = 0;
+        this._isPaused = false;
 
         this._levelLabel.setText(String.format("%s",gameLevel.getLevel()));
         this._scoreLabel.setText(String.format("%s", gameLevel.getScore()));
@@ -527,6 +551,10 @@ public class GameController {
         }
     }
 
+    /**
+     * Creates a torpedo object on the UI linked. The type of the torpedo is defined by it's parent (shooter).
+     * @param shooter parent of the torpedo object. Either the player or an enemy ship.
+     * */
     private void Shoot(SpaceShip shooter)
     {
         Torpedo torpedo = ObservableGameObjectFactory.CreateTorpedo(shooter);
@@ -534,6 +562,10 @@ public class GameController {
         EventLogger.debug(String.format("Torpedo shot by %s.", shooter.toString()));
     }
 
+    /**
+     * If the shooting cool down is 0, will shoot a torpedo (owned by the player). If the game is on pause,
+     * the command will be ignored.
+     * */
     private void TryPlayerShoot() {
         if (!this._isPaused && this._playerShootCooldown <= 0.0)
         {
@@ -543,19 +575,30 @@ public class GameController {
         }
     }
 
+
+    /**
+     * If it can move to left, then it will move the player to the left.
+     * If the game is on pause, the command will be ignored.
+     * */
     private void TryPlayerMoveLeft() {
         if (!this._isPaused) {
             this._player.TryMoveLeft();
         }
     }
 
+    /**
+     * If it can move to right, then it will move the player to the right.
+     * If the game is on pause, the command will be ignored.
+     * */
     private void TryPlayerMoveRight() {
         if (!this._isPaused) {
             this._player.TryMoveRight();
         }
     }
 
-
+    /**
+    * Pauses the game. Scene update will be interrupted, UI objects will freeze.
+    * */
     private void PauseGame()
     {
         if (this._isPaused)
@@ -568,6 +611,6 @@ public class GameController {
             this._timer.stop();
             EventLogger.debug("Game Paused");
         }
-        this._isPaused=!this._isPaused;
+        this._isPaused =! this._isPaused;
     }
 }

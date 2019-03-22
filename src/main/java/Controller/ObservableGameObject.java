@@ -5,6 +5,9 @@ import Model.GameObjectType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+/**
+ * Represents the base class for UI objects on the GamePane
+ * */
 public abstract class ObservableGameObject extends ImageView
 {
     private GameObject _gameObject;
@@ -12,15 +15,16 @@ public abstract class ObservableGameObject extends ImageView
     protected ObservableGameObject(GameObject gameObject)
     {
         super(ObjectTypeToImage(gameObject.GetType()));
-       // super(gameObject.GetWidth(), gameObject.GetHeight(), Color.BLACK);
 
         this._gameObject = gameObject;
         this.setTranslateX(this._gameObject.GetX());
         this.setTranslateY(this._gameObject.GetY());
-       //this.setFitHeight(this._gameObject.GetHeight());
-       //this.setFitWidth(this._gameObject.GetWidth());
     }
 
+    /**
+     * Tries to move the object to the left by 5 pixels.
+     * @return true if the object was moved.
+     * */
     public boolean TryMoveLeft()
     {
         if(this._gameObject.TrySetX(this._gameObject.GetX() - 5))
@@ -31,6 +35,10 @@ public abstract class ObservableGameObject extends ImageView
         return false;
     }
 
+    /**
+     * Tries to move the object to the right by 5 pixels.
+     * @return true if the object was moved.
+     * */
     public boolean TryMoveRight()
     {
         if(this._gameObject.TrySetX(this._gameObject.GetX() + 5))
@@ -41,6 +49,10 @@ public abstract class ObservableGameObject extends ImageView
         return false;
     }
 
+    /**
+     * Tries to move the object up by 5 pixels.
+     * @return true if the object was moved.
+     * */
     public boolean TryMoveUp()
     {
         if(this._gameObject.TrySetY(this._gameObject.GetY() - 5 ))
@@ -51,6 +63,10 @@ public abstract class ObservableGameObject extends ImageView
         return false;
     }
 
+    /**
+     * Tries to move the object down by 5 pixels.
+     * @return true if the object was moved.
+     * */
     public boolean TryMoveDown()
     {
         if(this._gameObject.TrySetY(this._gameObject.GetY() + 5))
@@ -61,11 +77,17 @@ public abstract class ObservableGameObject extends ImageView
         return false;
     }
 
+    /**
+     * Sets the object's state to 'dead' - this will trigger a removal from the UI.
+     * */
     public void SetDeath()
     {
         this._gameObject.SetToDead();
     }
 
+    /**
+     * Retrieves the underlying object.
+     * */
     public GameObject GetGameObject()
     {
         return this._gameObject;

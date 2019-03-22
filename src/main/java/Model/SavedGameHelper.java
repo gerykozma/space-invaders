@@ -11,11 +11,20 @@ import java.util.List;
 import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 
+/**
+ * Helper class for handling save (serialization) and load (deserialization) game level operation.
+ * */
 public class SavedGameHelper
 {
     private final static Logger EventLogger = Logger.getLogger(SavedGameHelper.class);
     private static Gson gson= new Gson();
 
+    /**
+     * Saves (serializes to json) a given game level to the given path.
+     * @param filePath The path to be used for serialization.
+     * @param save Game level to be serialized.
+     * @return True if the level was successfully saved.
+     * */
     public static final boolean SaveGame(String filePath, GameLevel save)
     {
         if(save == null)
@@ -36,6 +45,11 @@ public class SavedGameHelper
         return true;
     }
 
+    /**
+     * Loads (deserializes from json) a given game level from file.
+     * @param filePath File for the game level to be loaded from.
+     * @return The loaded (deserialized) game level.
+     * */
     public static final GameLevel LoadGame(String filePath)
     {
         Path path= Paths.get(filePath);

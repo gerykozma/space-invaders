@@ -2,6 +2,9 @@ package Model;
 
 import java.util.ArrayList;
 
+/**
+ * It is the underlying type of every UI element on the GamePane.
+ * */
 public class GameObject {
     private GameObjectType _type;
     private double _xCoordinate;
@@ -11,12 +14,12 @@ public class GameObject {
     private int _width;
 
     /**
-     *
-     * @param x
-     * @param y
-     * @param width
-     * @param height
-     * @param type
+     *Creates a new GameObject. It is the underlying type of every UI element on the GamePane.
+     * @param x x coordinate of the object.
+     * @param y y coordinate of the object.
+     * @param width width of the object.
+     * @param height height of the object.
+     * @param type type of the object.
      */
     protected GameObject(double x, double y, int width, int height, GameObjectType type) {
         if (x < 0 || x > AppConstants.MaxGamePaneWidth) {
@@ -69,6 +72,11 @@ public class GameObject {
         return this._height;
     }
 
+    /**
+     * Validates the argument and sets it as the new X coordinate if it passes.
+     * @param x the new value on X axis.
+     * @return true if the value was set.
+     * */
     public boolean TrySetX(double x) {
         if (x <= 0 || x + AppConstants.PlayerShipWidth > AppConstants.MaxGamePaneWidth) {
             return false;
@@ -77,6 +85,11 @@ public class GameObject {
         return true;
     }
 
+    /**
+     * Validates the argument and sets it as the new Y coordinate if it passes.
+     * @param y the new value on Y axis.
+     * @return true if the value was set.
+     * */
     public boolean TrySetY(double y) {
         if (y <= 0 || y > AppConstants.MaxGamePaneHeight) {
             return false;
@@ -85,6 +98,10 @@ public class GameObject {
         return true;
     }
 
+    /**
+     * Realises collision detection. Represents an accurate way to determine if the objects are overlapping.
+     * @param other Other GameObject to check collision.
+     * */
     public boolean Intersect(GameObject other)
     {
         ArrayList<Integer> currentObjectXVector = GenerateVector((int)this._xCoordinate, this._width);
@@ -108,14 +125,16 @@ public class GameObject {
         return false;
     }
 
+    /**
+     * Sets object status to 'dead'.
+     * */
     public void SetToDead()
     {
-        this._isDead=true;
+        this._isDead = true;
     }
 
     private static ArrayList<Integer> GenerateVector(int startIndex, int offset)
     {
-
         ArrayList<Integer> vector=new ArrayList<>();
         for (int i = startIndex; i <= startIndex + offset; i++)
         {

@@ -1,5 +1,8 @@
 package Model;
 
+/**
+ * Factory to obtain GameObjects.
+ * */
 public final class GameObjectFactory
 {
     public static GameObject CreatePlayerObject()
@@ -38,8 +41,8 @@ public final class GameObjectFactory
             GameObjectType type)
     {
         return new GameObject(
-            parentXCoordinate+20,
-            parentYCoordinate-10,
+            parentXCoordinate+15,
+            parentYCoordinate,
             AppConstants.TorpedoWidth,
             AppConstants.TorpedoHeight,
             type);

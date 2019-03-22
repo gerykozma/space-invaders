@@ -32,6 +32,9 @@ public class Torpedo extends ObservableGameObject
         }
         else
         {
+            //Override was the easiest way to implement dead torpedo removal:
+            //when a torpedo reached the top of the GamePane aka didn't hit
+            // anything and it's unable to move, set it's status to 'dead'.
             this.SetDeath();
             return false;
         }
@@ -51,6 +54,9 @@ public class Torpedo extends ObservableGameObject
         }
         else
         {
+            //Override was the easiest way to implement dead torpedo removal:
+            //when a torpedo reached the bottom of the GamePane aka didn't hit
+            // anything and it's unable to move, set it's status to 'dead'.
             this.SetDeath();
             return false;
         }

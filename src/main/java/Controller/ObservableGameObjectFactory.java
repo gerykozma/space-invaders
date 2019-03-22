@@ -6,15 +6,25 @@ import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 
+/**
+ * Factory to obtain UI objects: player ship, enemy ships, torpedoes.
+ * */
 public final class ObservableGameObjectFactory
 {
     private final static Logger EventLogger = Logger.getLogger(ObservableGameObjectFactory.class);
 
+    /**
+     * Creates a UI compatible player ship.
+     * */
     public static final SpaceShip CreatePlayerShip()
     {
         return new SpaceShip(GameObjectFactory.CreatePlayerObject());
     }
 
+    /**
+     * Creates the given number of UI compatible enemy ships.
+     * @param numberOfEnemiesToCreate number of enemy ships to create.
+     * */
     public static final SpaceShip[] CreateEnemyShips(int numberOfEnemiesToCreate) {
         ArrayList<SpaceShip> ships = new ArrayList<>();
 
@@ -30,6 +40,10 @@ public final class ObservableGameObjectFactory
         return ships.toArray(a);
     }
 
+    /**
+     * Creates a UI compatible torpedo based on the shooter's type.
+     * @param shooter parent of the torpedo.
+     * */
     public static final Torpedo CreateTorpedo(SpaceShip shooter)
     {
         if (shooter == null)

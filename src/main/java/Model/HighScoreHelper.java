@@ -10,10 +10,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * Helper class to save player score and determine high scores.
+ * */
 public final class HighScoreHelper
 {
     private static final Logger EventLogger = Logger.getLogger(HighScoreHelper.class);
 
+    /**
+     * Saves the given score to an output file.
+     * @param score Score to be saved
+     * @return True if the score was high score.
+     * */
     public static boolean SaveScore(Integer score) throws IOException
     {
         List<Integer> playerScores;

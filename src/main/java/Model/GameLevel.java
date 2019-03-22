@@ -2,6 +2,9 @@ package Model;
 
 import java.util.ArrayList;
 
+/**
+ * Represents a game level with GameObjects, score and level counter.
+ * */
 public class GameLevel
 {
     private ArrayList<GameObject> _gameObjects;
@@ -11,10 +14,13 @@ public class GameLevel
     public GameLevel(ArrayList<GameObject> gameObjects, int score, int level)
     {
         this._gameObjects = gameObjects;
-        this._score=score;
-        this._level=level;
+        this._score = score;
+        this._level = level;
     }
 
+    /**
+     * Returns level one.
+     * */
     public static GameLevel GetInitialLevel()
     {
         return new GameLevel(null, 0, 1);
