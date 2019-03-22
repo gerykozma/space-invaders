@@ -376,20 +376,21 @@ public class GameController {
 
     private void UpdatePlayerTorpedos()
     {
-        for (ObservableGameObject observableGameObject : this.GetGameObjects())
+        for (ObservableGameObject playerTorpedo : this.GetGameObjects())
         {
-            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.PlayerTorpedo))
+            if (playerTorpedo.GetGameObject().GetType().equals(GameObjectType.PlayerTorpedo))
             {
-                observableGameObject.TryMoveUp();
+                playerTorpedo.TryMoveUp();
                 this.GetGameObjects()
                         .stream()
                         .filter(enemy -> enemy.GetGameObject().GetType().equals(GameObjectType.EnemyShip))
                         .forEach(enemy ->
                         {
-                            if (enemy.GetGameObject().IntersectLowerBounds(observableGameObject.GetGameObject()))
+                          //  if (enemy.GetGameObject().IntersectLowerBounds(observableGameObject.GetGameObject()))
+                            if (playerTorpedo.GetGameObject().Intersect(enemy.GetGameObject()))
                             {
                                 enemy.SetDeath();
-                                observableGameObject.SetDeath();
+                                playerTorpedo.SetDeath();
                                 this._scoreHelper.IncreaseScore();
                                 this._scoreLabel.setText(this._scoreHelper.GetScoreAsString());
                                 EventLogger.info("Enemy ship destroyed.");
@@ -401,15 +402,16 @@ public class GameController {
 
     private void UpDateEnemyTorpedos()
     {
-        for (ObservableGameObject observableGameObject : this.GetGameObjects())
+        for (ObservableGameObject enemyTorpedo : this.GetGameObjects())
         {
-            if (observableGameObject.GetGameObject().GetType().equals(GameObjectType.EnemyTorpedo))
+            if (enemyTorpedo.GetGameObject().GetType().equals(GameObjectType.EnemyTorpedo))
             {
-                observableGameObject.TryMoveDown();
-                if (this._player.GetGameObject().IntersectUpperBounds(observableGameObject.GetGameObject()))
+                enemyTorpedo.TryMoveDown();
+              //  if (this._player.GetGameObject().IntersectUpperBounds(observableGameObject.GetGameObject()))
+                if (enemyTorpedo.GetGameObject().Intersect(this._player.GetGameObject()))
                 {
                     this._player.SetDeath();
-                    observableGameObject.SetDeath();
+                    enemyTorpedo.SetDeath();
                     EventLogger.info("Player ship destroyed.");
                 }
             }

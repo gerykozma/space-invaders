@@ -8,23 +8,16 @@ public final class ObservableGameObjectFactory
 
     public static final SpaceShip CreatePlayerShip()
     {
-        return new SpaceShip(new GameObject(
-                AppConstants.PlayerShipXCoordinate,
-                AppConstants.PlayerShipYCoordinate,
-                AppConstants.PlayerShipWidth,
-                AppConstants.PlayerShipHeight,
-                GameObjectType.PlayerShip));
+        return new SpaceShip(GameObjectFactory.CreatePlayerObject());
     }
 
     public static final SpaceShip[] CreateEnemyShips(int numberOfEnemiesToCreate) {
         ArrayList<SpaceShip> ships = new ArrayList<>();
+
         for (int i = 0; i < numberOfEnemiesToCreate; i++) {
-            GameObject gameObject = new GameObject(
-                    AppConstants.EnemyShipXCoordinate + i * 50,
-                    AppConstants.EnemyShipYCoordinate + i * 50,
-                    AppConstants.EnemyShipWidth,
-                    AppConstants.EnemyShipHeight,
-                    GameObjectType.EnemyShip);
+            GameObject gameObject = GameObjectFactory.CreateEnemyObject();
+            gameObject.TrySetX(gameObject.GetX()+ i * 50);
+            gameObject.TrySetY(gameObject.GetY()+ i * 50);
             ships.add(new SpaceShip(gameObject));
             EventLogger.debug("Enemy ship created.");
         }
@@ -40,26 +33,18 @@ public final class ObservableGameObjectFactory
             throw new IllegalArgumentException("Shooter must be specified to create Torpedo.");
         }
 
-        GameObjectType torpedoType;
         switch (shooter.GetGameObject().GetType())
         {
             case EnemyShip:
-                torpedoType=GameObjectType.EnemyTorpedo;
-                break;
+               return new Torpedo(GameObjectFactory.CreateEnemyTorpedoObject(
+                       shooter.GetGameObject().GetX(),
+                       shooter.GetGameObject().GetY()));
             case PlayerShip:
-                torpedoType=GameObjectType.PlayerTorpedo;
-                break;
+                return new Torpedo(GameObjectFactory.CreatePlayerTorpedoObject(
+                        shooter.GetGameObject().GetX(),
+                        shooter.GetGameObject().GetY()));
                 default:
                     return null;
         }
-
-        GameObject gameObject = new GameObject(
-                shooter.GetGameObject().GetX()+20,
-                shooter.GetGameObject().GetY()-10,
-                25,
-                25,
-                torpedoType);
-
-        return new Torpedo(gameObject);
     }
 }

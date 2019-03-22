@@ -11,12 +11,13 @@ public abstract class ObservableGameObject extends ImageView
     protected ObservableGameObject(GameObject gameObject)
     {
         super(ObjectTypeToImage(gameObject.GetType()));
+       // super(gameObject.GetWidth(), gameObject.GetHeight(), Color.BLACK);
 
         this._gameObject = gameObject;
         this.setTranslateX(this._gameObject.GetX());
         this.setTranslateY(this._gameObject.GetY());
-        this.setFitHeight(this._gameObject.GetHeight());
-        this.setFitWidth(this._gameObject.GetWidth());
+       //this.setFitHeight(this._gameObject.GetHeight());
+       //this.setFitWidth(this._gameObject.GetWidth());
     }
 
     public boolean TryMoveLeft()

@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class GameObject {
     private GameObjectType _type;
@@ -56,8 +58,18 @@ public class GameObject {
         return this._type;
     }
 
+    public int GetWidth()
+    {
+        return this._width;
+    }
+
+    public int GetHeight()
+    {
+        return this._height;
+    }
+
     protected boolean TrySetX(double x) {
-        if (x < 0 || x + AppConstants.PlayerShipWidth > AppConstants.MaxGamePaneWidth) {
+        if (x <= 0 || x + AppConstants.PlayerShipWidth > AppConstants.MaxGamePaneWidth) {
             return false;
         }
         this._xCoordinate = x;
@@ -65,37 +77,60 @@ public class GameObject {
     }
 
     protected boolean TrySetY(double y) {
-        if (y < 0 || y > AppConstants.MaxGamePaneHeight) {
+        if (y <= 0 || y > AppConstants.MaxGamePaneHeight) {
             return false;
         }
         this._yCoordinate = y;
         return true;
     }
 
-    protected boolean IntersectLowerBounds(GameObject other)
-    {
-        if((this.GetX() < other.GetX() && other.GetX() < this.GetX() + this.GetWidth()
-        ||  this.GetX() < other.GetX() + other.GetWidth() && other.GetX() + other.GetWidth() < this.GetX() + this.GetWidth()))
-        {
-            if(this.GetY() + this.GetHeight() >= other.GetY() && other.GetY() + other.GetHeight() <= this.GetY())
-            {
-                return true;
-            }
-        }
-        return  false;
-    }
+//    protected boolean IntersectLowerBounds(GameObject other)
+//    {
+//        if((this.GetX() < other.GetX() && other.GetX() < this.GetX() + this.GetWidth()
+//        ||  this.GetX() < other.GetX() + other.GetWidth() && other.GetX() + other.GetWidth() < this.GetX() + this.GetWidth()))
+//        {
+//            if(this.GetY() + this.GetHeight() >= other.GetY() && other.GetY() + other.GetHeight() <= this.GetY())
+//            {
+//                return true;
+//            }
+//        }
+//        return  false;
+//    }
 
-    protected boolean IntersectUpperBounds(GameObject other)
+//    protected boolean IntersectUpperBounds(GameObject other)
+//    {
+//        if((this.GetX() < other.GetX() && other.GetX() < this.GetX() + this.GetWidth()
+//                ||  this.GetX() < other.GetX() + other.GetWidth() && other.GetX() + other.GetWidth() < this.GetX() + this.GetWidth()))
+//        {
+//            if(other.GetY() + other.GetHeight() >= this.GetY() && other.GetY() < this.GetY() + this.GetHeight())
+//            {
+//                return true;
+//            }
+//        }
+//        return  false;
+//    }
+
+    protected boolean Intersect(GameObject other)
     {
-        if((this.GetX() < other.GetX() && other.GetX() < this.GetX() + this.GetWidth()
-                ||  this.GetX() < other.GetX() + other.GetWidth() && other.GetX() + other.GetWidth() < this.GetX() + this.GetWidth()))
+        ArrayList<Integer> currentObjectXVector = GenerateVector((int)this._xCoordinate, this._width);
+        ArrayList<Integer> otherObjectXVector = GenerateVector((int)other.GetX(), other.GetWidth());
+        for(int x : currentObjectXVector)
         {
-            if(other.GetY() + other.GetHeight() >= this.GetY() && other.GetY() < this.GetY() + this.GetHeight())
+            if(otherObjectXVector.contains(x))
             {
-                return true;
+                ArrayList<Integer> currentObjectYVector = GenerateVector((int)this._yCoordinate, this._height);
+                ArrayList<Integer> otherObjectYVector = GenerateVector((int)other.GetY(), other.GetHeight());
+
+                for (int y : currentObjectYVector)
+                {
+                    if(otherObjectYVector.contains(y))
+                    {
+                        return true;
+                    }
+                }
             }
         }
-        return  false;
+        return false;
     }
 
     protected void SetToDead()
@@ -103,13 +138,14 @@ public class GameObject {
         this._isDead=true;
     }
 
-    public int GetWidth()
+    private static ArrayList<Integer> GenerateVector(int startIndex, int offset)
     {
-        return _width;
-    }
 
-    public int GetHeight()
-    {
-        return _height;
+        ArrayList<Integer> vector=new ArrayList<>();
+        for (int i = startIndex; i <= startIndex + offset; i++)
+        {
+            vector.add(i);
+        }
+        return vector;
     }
 }
