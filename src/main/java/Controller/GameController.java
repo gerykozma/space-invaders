@@ -159,7 +159,7 @@ public class GameController {
     private void LoadGame()
     {
         EventLogger.info("Loading game..");
-        this._isPaused=true;
+        this._isPaused = true;
         this._timer.stop();
 
         JFileChooser fileChooser = new JFileChooser();
@@ -177,13 +177,14 @@ public class GameController {
         }
 
         GameLevel loadedLevel = SavedGameHelper.LoadGame(fileChooser.getSelectedFile().getPath());
-        if(loadedLevel!=null)
+        if(loadedLevel != null)
         {
             EventLogger.info("Game level loaded from file.");
             this.InitNewLevel(loadedLevel);
             return;
         }
         EventLogger.error("Failed to load game level.");
+        
     }
 
     /**
@@ -192,7 +193,7 @@ public class GameController {
     private void SaveGame()
     {
         EventLogger.info("Saving game..");
-        this._isPaused=true;
+        this._isPaused = true;
         this._timer.stop();
 
         JFileChooser fileChooser = new JFileChooser();
@@ -232,7 +233,9 @@ public class GameController {
     private void RestartGame()
     {
         EventLogger.info("Game Restarted");
-        this._scoreHelper= new ScoreHelper(0,1);
+        this._isPaused = false;
+        this._timer.stop();
+        this._scoreHelper = new ScoreHelper(0,1);
         this.StartGame(GameLevel.GetInitialLevel());
     }
 
@@ -507,7 +510,6 @@ public class GameController {
         EventLogger.debug("Removing left-over objects..");
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
         this._enemyMoveTimer = 0;
-        this._isPaused = false;
 
         this._levelLabel.setText(String.format("%s",gameLevel.getLevel()));
         this._scoreLabel.setText(String.format("%s", gameLevel.getScore()));

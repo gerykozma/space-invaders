@@ -17,17 +17,31 @@ public final class HighScoreHelper
 {
     private static final Logger EventLogger = Logger.getLogger(HighScoreHelper.class);
 
+
     /**
-     * Saves the given score to an output file.
-     * @param score Score to be saved
+     * Saves the given score to the default output file.
+     * @param score Score to be saved.
+     * @throws IOException If an error occurs in file handling.
      * @return True if the score was high score.
      * */
     public static boolean SaveScore(Integer score) throws IOException
     {
+        return SaveScore(score, "PlayerScores.score");
+    }
+
+    /**
+     * Saves the given score to the given output file.
+     * @param score Score to be saved.
+     * @param fileName File to store scores.
+     * @throws IOException If an error occurs in file handling.
+     * @return True if the score was high score.
+     * */
+    public static boolean SaveScore(Integer score, String fileName) throws IOException
+    {
         List<Integer> playerScores;
         try
         {
-            playerScores = GetPlayerScoresFromFile();
+            playerScores = GetPlayerScoresFromFile(fileName);
         }
         catch (IOException ex)
         {
@@ -38,7 +52,7 @@ public final class HighScoreHelper
         playerScores.add(score);
         List<Integer> sortedScores = playerScores.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
-        File scoresFile = new File("PlayerScores.score");
+        File scoresFile = new File(fileName);
 
         try(BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(scoresFile)))) {
             for (Integer sortedScore : sortedScores)
@@ -60,9 +74,9 @@ public final class HighScoreHelper
         return false;
     }
 
-    private static ArrayList<Integer> GetPlayerScoresFromFile() throws IOException
+    private static ArrayList<Integer> GetPlayerScoresFromFile(String fileName) throws IOException
     {
-        File highScores= new File("PlayerScores.score");        if(!highScores.exists())
+        File highScores= new File(fileName);        if(!highScores.exists())
         {
             return new ArrayList<Integer>(0);
         }

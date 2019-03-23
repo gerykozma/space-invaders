@@ -1,6 +1,9 @@
 import Model.*;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -25,6 +28,27 @@ public class SpaceInvadersTests {
         scoreHelper.IncreaseScore();
 
         assertEquals(scoreHelper.GetScore(), 1000);
+    }
+
+    @Test
+    public void SaveScore_HighScoreAndSimpleScore_ScoreSaved() throws IOException
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("1000\n");
+        stringBuilder.append("100\n");
+        stringBuilder.append("10\n");
+        stringBuilder.append("0\n");
+
+        String fileName = String.format("TestScore_%s.score", LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+
+        Files.write(Paths.get(fileName), stringBuilder.toString().getBytes());
+
+        assertFalse(HighScoreHelper.SaveScore(999, fileName));
+        assertFalse(HighScoreHelper.SaveScore(99, fileName));
+        assertFalse(HighScoreHelper.SaveScore(9, fileName));
+        assertFalse(HighScoreHelper.SaveScore(0, fileName));
+        assertFalse(HighScoreHelper.SaveScore(-999, fileName));
+        assertTrue(HighScoreHelper.SaveScore(9999, fileName));
     }
 
     @Test
