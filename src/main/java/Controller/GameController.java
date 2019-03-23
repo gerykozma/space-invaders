@@ -42,7 +42,6 @@ public class GameController {
     private int _enemyMoveTimer = 0;
     private Random _randomGenerator;
 
-
     /** Creates an initialized GameController object.
      * @param primaryStage the main stage(window)
      * @throws IOException when the fxml file cannot be loaded
@@ -184,7 +183,7 @@ public class GameController {
             return;
         }
         EventLogger.error("Failed to load game level.");
-        
+
     }
 
     /**
@@ -603,6 +602,11 @@ public class GameController {
     * */
     private void PauseGame()
     {
+        if(this._player.GetGameObject().GetIsDead())
+        {
+            return;
+        }
+
         if (this._isPaused)
         {
             this._timer.start();
