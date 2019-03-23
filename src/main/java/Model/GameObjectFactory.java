@@ -41,7 +41,7 @@ public final class GameObjectFactory
             GameObjectType type)
     {
         return new GameObject(
-            parentXCoordinate+15,
+            parentXCoordinate + AppConstants.TorpedoXOffset,
             parentYCoordinate,
             AppConstants.TorpedoWidth,
             AppConstants.TorpedoHeight,

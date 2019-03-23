@@ -62,8 +62,7 @@ public final class HighScoreHelper
 
     private static ArrayList<Integer> GetPlayerScoresFromFile() throws IOException
     {
-        File highScores= new File("PlayerScores.score");
-        if(!highScores.exists())
+        File highScores= new File("PlayerScores.score");        if(!highScores.exists())
         {
             return new ArrayList<Integer>(0);
         }

@@ -1,8 +1,9 @@
 import Model.*;
 import org.junit.Test;
 
-import java.io.File;
-import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -24,16 +25,6 @@ public class SpaceInvadersTests {
         scoreHelper.IncreaseScore();
 
         assertEquals(scoreHelper.GetScore(), 1000);
-    }
-
-    @Test
-    public void HighScoreHelperTest() throws IOException
-    {
-//        int score=9999;
-//        int highScore=99999;
-//        assertFalse(HighScoreHelper.SaveScore(score));
-//        assertTrue(HighScoreHelper.SaveScore(highScore));
-        //TODO
     }
 
     @Test
@@ -70,8 +61,8 @@ public class SpaceInvadersTests {
                 AppConstants.PlayerShipYCoordinate);
 
         assertNotNull(playerTorpedo);
-        assertEquals(playerTorpedo.GetX(),  AppConstants.PlayerShipXCoordinate+20, ErrorThreshold);
-        assertEquals(playerTorpedo.GetY(),  AppConstants.PlayerShipYCoordinate-10, ErrorThreshold);
+        assertEquals(playerTorpedo.GetX(),  AppConstants.PlayerShipXCoordinate + AppConstants.TorpedoXOffset, ErrorThreshold);
+        assertEquals(playerTorpedo.GetY(),  AppConstants.PlayerShipYCoordinate, ErrorThreshold);
         assertEquals(playerTorpedo.GetWidth(), AppConstants.TorpedoWidth);
         assertEquals(playerTorpedo.GetHeight(), AppConstants.TorpedoHeight);
         assertEquals(playerTorpedo.GetType(), GameObjectType.PlayerTorpedo);
@@ -85,29 +76,70 @@ public class SpaceInvadersTests {
                 AppConstants.EnemyShipYCoordinate);
 
         assertNotNull(enemyTorpedo);
-        assertEquals(enemyTorpedo.GetX(),  AppConstants.EnemyShipXCoordinate+20, ErrorThreshold);
-        assertEquals(enemyTorpedo.GetY(),  AppConstants.EnemyShipYCoordinate-10, ErrorThreshold);
+        assertEquals(enemyTorpedo.GetX(),  AppConstants.EnemyShipXCoordinate + AppConstants.TorpedoXOffset, ErrorThreshold);
+        assertEquals(enemyTorpedo.GetY(),  AppConstants.EnemyShipYCoordinate, ErrorThreshold);
         assertEquals(enemyTorpedo.GetWidth(), AppConstants.TorpedoWidth);
         assertEquals(enemyTorpedo.GetHeight(), AppConstants.TorpedoHeight);
         assertEquals(enemyTorpedo.GetType(), GameObjectType.EnemyTorpedo);
     }
 
     @Test
-    public void LoadGameTest()
+    public void SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded()
     {
-        String path = String.format("TestSave.save");
+        ArrayList<GameObject> objects = new ArrayList<>();
 
-        File file = new File(path);
-        file.getAbsolutePath();
-        if(file.exists())
-        System.out.println(file.getAbsolutePath());
-        //E:\JavaDev\space-invaders\src\test\java\TestFiles\TestSave.save
-    }
+        GameObject player = GameObjectFactory.CreatePlayerObject();
+        GameObject enemy = GameObjectFactory.CreateEnemyObject();
+        GameObject playerTorpedo = GameObjectFactory.CreatePlayerTorpedoObject(100,100);
+        GameObject enemyTorpedo = GameObjectFactory.CreateEnemyTorpedoObject(200, 200);
+        objects.add(player);
+        objects.add(enemy);
+        objects.add(playerTorpedo);
+        objects.add(enemyTorpedo);
 
-    @Test
-    public void SaveGameTest()
-    {
+        GameLevel level = new GameLevel(objects, 1000, 5);
 
+        SavedGameHelper.SaveGame("", level);
+
+        String fileName =String.format("SavedGame_%s.save", LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+
+        GameLevel loaded = SavedGameHelper.LoadGame(fileName);
+        assertEquals(4, loaded.getGameObjects().size());
+       for(GameObject gameObject : loaded.getGameObjects())
+       {
+           assertNotNull(gameObject);
+           if (gameObject.GetType().equals(GameObjectType.PlayerShip))
+           {
+               assertEquals(gameObject.GetX(),  AppConstants.PlayerShipXCoordinate, ErrorThreshold);
+               assertEquals(gameObject.GetY(),  AppConstants.PlayerShipYCoordinate, ErrorThreshold);
+               assertEquals(gameObject.GetWidth(), AppConstants.PlayerShipWidth);
+               assertEquals(gameObject.GetHeight(), AppConstants.PlayerShipHeight);
+           }
+           else if(gameObject.GetType().equals(GameObjectType.EnemyShip))
+           {
+               assertEquals(gameObject.GetX(),  AppConstants.EnemyShipXCoordinate, ErrorThreshold);
+               assertEquals(gameObject.GetY(),  AppConstants.EnemyShipYCoordinate, ErrorThreshold);
+               assertEquals(gameObject.GetWidth(), AppConstants.EnemyShipWidth);
+               assertEquals(gameObject.GetHeight(), AppConstants.EnemyShipHeight);
+           }
+           else if(gameObject.GetType().equals(GameObjectType.PlayerTorpedo))
+           {
+               assertEquals(gameObject.GetX(),  100+AppConstants.TorpedoXOffset, ErrorThreshold);
+               assertEquals(gameObject.GetY(),  100, ErrorThreshold);
+               assertEquals(gameObject.GetWidth(), AppConstants.TorpedoWidth);
+               assertEquals(gameObject.GetHeight(), AppConstants.TorpedoHeight);
+           }
+           else if(gameObject.GetType().equals(GameObjectType.EnemyTorpedo))
+           {
+               assertEquals(gameObject.GetX(),  200 + AppConstants.TorpedoXOffset, ErrorThreshold);
+               assertEquals(gameObject.GetY(),  200, ErrorThreshold);
+               assertEquals(gameObject.GetWidth(), AppConstants.TorpedoWidth);
+               assertEquals(gameObject.GetHeight(), AppConstants.TorpedoHeight);
+           }
+       }
+
+       assertEquals(loaded.getScore(), 1000);
+       assertEquals(loaded.getLevel(), 5);
     }
 
     @Test

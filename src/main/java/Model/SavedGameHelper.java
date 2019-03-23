@@ -17,7 +17,7 @@ import org.apache.log4j.Logger;
 public class SavedGameHelper
 {
     private final static Logger EventLogger = Logger.getLogger(SavedGameHelper.class);
-    private static Gson gson= new Gson();
+    private static Gson gson = new Gson();
 
     /**
      * Saves (serializes to json) a given game level to the given path.

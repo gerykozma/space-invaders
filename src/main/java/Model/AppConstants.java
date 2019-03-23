@@ -19,4 +19,5 @@ public final class AppConstants
     public static final int MaxLevelNumber = 10;
     public static final int TorpedoWidth = 5;
     public static final int TorpedoHeight = 15;
+    public static final int TorpedoXOffset = 15;
 }
