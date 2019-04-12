@@ -1,0 +1,5 @@
+*.score
+*.log
+*.log.*
+*.save
+/target
