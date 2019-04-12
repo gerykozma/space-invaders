@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import static Model.GameObjectFactory.*;
 import static org.junit.Assert.*;
 
 public class SpaceInvadersTests {
@@ -54,7 +55,7 @@ public class SpaceInvadersTests {
     @Test
     public void CreateGameObject_CreatePlayerObject_ObjectCreated()
     {
-        GameObject player = GameObjectFactory.CreatePlayerObject();
+        GameObject player = CreatePlayerObject();
 
         assertNotNull(player);
         assertEquals(player.GetX(),  AppConstants.PlayerShipXCoordinate, ErrorThreshold);
@@ -67,7 +68,7 @@ public class SpaceInvadersTests {
     @Test
     public void CreateGameObject_CreateEnemyObject_ObjectCreated()
     {
-        GameObject enemy = GameObjectFactory.CreateEnemyObject();
+        GameObject enemy = CreateEnemyObject();
 
         assertNotNull(enemy);
         assertEquals(enemy.GetX(),  AppConstants.EnemyShipXCoordinate, ErrorThreshold);
@@ -80,7 +81,7 @@ public class SpaceInvadersTests {
     @Test
     public void CreateGameObject_CreatePlayerTorpedoObject_ObjectCreated()
     {
-        GameObject playerTorpedo = GameObjectFactory.CreatePlayerTorpedoObject(
+        GameObject playerTorpedo = CreatePlayerTorpedoObject(
                 AppConstants.PlayerShipXCoordinate,
                 AppConstants.PlayerShipYCoordinate);
 
@@ -95,7 +96,7 @@ public class SpaceInvadersTests {
     @Test
     public void CreateGameObject_CreateEnemyTorpedoObject_ObjectCreated()
     {
-        GameObject enemyTorpedo = GameObjectFactory.CreateEnemyTorpedoObject(
+        GameObject enemyTorpedo = CreateEnemyTorpedoObject(
                 AppConstants.EnemyShipXCoordinate,
                 AppConstants.EnemyShipYCoordinate);
 
@@ -112,10 +113,10 @@ public class SpaceInvadersTests {
     {
         ArrayList<GameObject> objects = new ArrayList<>();
 
-        GameObject player = GameObjectFactory.CreatePlayerObject();
-        GameObject enemy = GameObjectFactory.CreateEnemyObject();
-        GameObject playerTorpedo = GameObjectFactory.CreatePlayerTorpedoObject(100,100);
-        GameObject enemyTorpedo = GameObjectFactory.CreateEnemyTorpedoObject(200, 200);
+        GameObject player = CreatePlayerObject();
+        GameObject enemy = CreateEnemyObject();
+        GameObject playerTorpedo = CreatePlayerTorpedoObject(100,100);
+        GameObject enemyTorpedo = CreateEnemyTorpedoObject(200, 200);
         objects.add(player);
         objects.add(enemy);
         objects.add(playerTorpedo);
@@ -162,14 +163,14 @@ public class SpaceInvadersTests {
            }
        }
 
-       assertEquals(loaded.getScore(), 1000);
-       assertEquals(loaded.getLevel(), 5);
+       assertEquals(loaded.GetScore(), 1000);
+       assertEquals(loaded.GetLevel(), 5);
     }
 
     @Test
     public void SetX_ValidX_ReturnsTrue()
     {
-        GameObject dummy = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy = CreatePlayerObject();
 
         assertTrue(dummy.TrySetX(100));
         assertTrue(dummy.TrySetX(10));
@@ -180,7 +181,7 @@ public class SpaceInvadersTests {
     @Test
     public void SetX_InvalidX_ReturnsFalse()
     {
-        GameObject dummy = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy = CreatePlayerObject();
 
         assertFalse(dummy.TrySetX(-10));
         assertFalse(dummy.TrySetX(0));
@@ -191,7 +192,7 @@ public class SpaceInvadersTests {
     @Test
     public void SetY_ValidY_ReturnsTrue()
     {
-        GameObject dummy = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy = CreatePlayerObject();
 
         assertTrue(dummy.TrySetY(100));
         assertTrue(dummy.TrySetY(10));
@@ -203,7 +204,7 @@ public class SpaceInvadersTests {
     @Test
     public void SetY_InvalidY_ReturnsFalse()
     {
-        GameObject dummy = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy = CreatePlayerObject();
 
         assertFalse(dummy.TrySetX(-10));
         assertFalse(dummy.TrySetX(0));
@@ -214,8 +215,8 @@ public class SpaceInvadersTests {
     @Test
     public void Intersect_NoIntersection_ReturnsFalse()
     {
-        GameObject dummy1 = GameObjectFactory.CreatePlayerObject();
-        GameObject dummy2 = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy1 = CreatePlayerObject();
+        GameObject dummy2 = CreatePlayerObject();
 
         assertTrue(dummy1.TrySetX(dummy1.GetX() + 40));
         assertTrue(dummy1.TrySetY(dummy1.GetY() + 50));
@@ -226,8 +227,8 @@ public class SpaceInvadersTests {
     @Test
     public void Intersect_Intersection_ReturnsTrue()
     {
-        GameObject dummy1 = GameObjectFactory.CreatePlayerObject();
-        GameObject dummy2 = GameObjectFactory.CreatePlayerObject();
+        GameObject dummy1 = CreatePlayerObject();
+        GameObject dummy2 = CreatePlayerObject();
 
         assertTrue(dummy1.TrySetX(dummy1.GetX() + 15));
         assertTrue(dummy1.TrySetY(dummy1.GetY() + 15));

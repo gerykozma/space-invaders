@@ -17,7 +17,6 @@ public final class HighScoreHelper
 {
     private static final Logger EventLogger = Logger.getLogger(HighScoreHelper.class);
 
-
     /**
      * Saves the given score to the default output file.
      * @param score Score to be saved.

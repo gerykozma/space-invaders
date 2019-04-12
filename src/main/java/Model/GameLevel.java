@@ -31,12 +31,12 @@ public class GameLevel
         return _gameObjects;
     }
 
-    public int getScore()
+    public int GetScore()
     {
         return _score;
     }
 
-    public int getLevel()
+    public int GetLevel()
     {
         return _level;
     }

@@ -510,8 +510,8 @@ public class GameController {
         this._gamePane.getChildren().removeAll(this.GetGameObjects());
         this._enemyMoveTimer = 0;
 
-        this._levelLabel.setText(String.format("%s",gameLevel.getLevel()));
-        this._scoreLabel.setText(String.format("%s", gameLevel.getScore()));
+        this._levelLabel.setText(String.format("%s",gameLevel.GetLevel()));
+        this._scoreLabel.setText(String.format("%s", gameLevel.GetScore()));
 
         if(gameLevel.getGameObjects() == null)
         {
@@ -521,7 +521,7 @@ public class GameController {
             this._gamePane.getChildren().add(_player);
             EventLogger.debug("PLayer ship added to GamePane.");
 
-            this._gamePane.getChildren().addAll(ObservableGameObjectFactory.CreateEnemyShips(gameLevel.getLevel()));
+            this._gamePane.getChildren().addAll(ObservableGameObjectFactory.CreateEnemyShips(gameLevel.GetLevel()));
             EventLogger.debug("Enemy ships added to GamePane.");
         }
         else
@@ -544,7 +544,7 @@ public class GameController {
                         break;
                 }
 
-                this._scoreHelper=new ScoreHelper(gameLevel.getScore(), gameLevel.getLevel());
+                this._scoreHelper=new ScoreHelper(gameLevel.GetScore(), gameLevel.GetLevel());
 
                 this._gamePane.getChildren().addAll(objectsLoaded);
                 EventLogger.info("Saved game loaded.");

@@ -12,14 +12,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/SpaceInvadersTests.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-154">
-              <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state relative-caret-position="396">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -27,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GameController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="604" column="52" selection-start-line="604" selection-start-column="52" selection-end-line="604" selection-end-column="52" />
+            <state relative-caret-position="242">
+              <caret line="527" column="13" selection-start-line="527" selection-start-column="13" selection-end-line="527" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,10 +46,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/SpaceInvadersTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+            <state relative-caret-position="-1167">
+              <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,26 +60,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameObjectFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameObjectType.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+              <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Torpedo.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/ScoreHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state relative-caret-position="-245">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameLevel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/AppConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -89,6 +128,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>enemyf</find>
+      <find>stre</find>
+      <find>maven-project-info-reports-plugin</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -105,7 +146,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/log4j.xml" />
         <option value="$PROJECT_DIR$/log4j2.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/GameLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/SavedGameHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Torpedo.java" />
@@ -119,22 +159,23 @@
         <option value="$PROJECT_DIR$/src/main/java/AppConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/ObservableGameObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/GameController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ObservableGameObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/ObservableGameObjectFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/SpaceShip.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Torpedo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/GameLevel.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/GameObject.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/ScoreHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/SavedGameHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/AppConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/GameObjectFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/SpaceInvadersTests.java" />
         <option value="$PROJECT_DIR$/PlayerScores.score" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/GameController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/GameLevel.java" />
+        <option value="$PROJECT_DIR$/src/test/java/SpaceInvadersTests.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -146,18 +187,16 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1615" />
-    <option name="height" value="880" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="952" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -198,6 +237,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpaceInvaders" type="b2602c69:ProjectViewProjectNode" />
+              <item name="space-invaders" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -227,24 +274,19 @@
             </path>
             <path>
               <item name="SpaceInvaders" type="b2602c69:ProjectViewProjectNode" />
-              <item name="space-invaders" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="test-classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SpaceInvaders" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
@@ -258,6 +300,7 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\JavaDev\space-invaders\src\main\resources" />
+      <recent name="E:\JavaDev\space-invaders\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,7 +317,7 @@
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="space-invaders" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -299,11 +342,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpaceInvadersTests.SaveGameHelperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SpaceInvadersTests.SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-invaders" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SpaceInvadersTests" />
-      <option name="METHOD_NAME" value="SaveGameHelperTest" />
+      <option name="METHOD_NAME" value="SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -363,18 +406,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.SpaceInvadersTests" />
-      <item itemvalue="JUnit.SpaceInvadersTests.SaveGameHelperTest" />
       <item itemvalue="JUnit.SpaceInvadersTests.HighScoreHelperTest" />
       <item itemvalue="JUnit.SpaceInvadersTests.SaveScore_HighScoreAndSimpleScore_ScoreSaved" />
       <item itemvalue="Maven.SpaceInvaders [-U,idea:idea]" />
+      <item itemvalue="JUnit.SpaceInvadersTests.SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.SpaceInvadersTests.SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" />
         <item itemvalue="JUnit.SpaceInvadersTests" />
         <item itemvalue="JUnit.SpaceInvadersTests.SaveScore_HighScoreAndSimpleScore_ScoreSaved" />
         <item itemvalue="JUnit.SpaceInvadersTests.HighScoreHelperTest" />
-        <item itemvalue="JUnit.SpaceInvadersTests.SaveGameHelperTest" />
       </list>
     </recent_temporary>
   </component>
@@ -392,27 +435,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpaceInvadersTests_SaveGameTest - 2019.03.23 at 01h 19m 00s.xml">
-      <configuration name="SpaceInvadersTests.SaveGameTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests_SaveGameHelperTest - 2019.03.23 at 01h 22m 56s.xml">
-      <configuration name="SpaceInvadersTests.SaveGameHelperTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests - 2019.03.23 at 01h 29m 37s.xml">
-      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests_HighScoreHelperTest - 2019.03.23 at 01h 31m 00s.xml">
-      <configuration name="SpaceInvadersTests.HighScoreHelperTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests_HighScoreHelperTest - 2019.03.23 at 01h 32m 26s.xml">
-      <configuration name="SpaceInvadersTests.HighScoreHelperTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests - 2019.03.23 at 01h 33m 32s.xml">
-      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpaceInvadersTests - 2019.03.23 at 01h 34m 31s.xml">
-      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SpaceInvadersTests_SaveScore_HighScoreAndSimpleScore_ScoreSaved - 2019.03.23 at 02h 45m 58s.xml">
       <configuration name="SpaceInvadersTests.SaveScore_HighScoreAndSimpleScore_ScoreSaved" configurationId="JUnit" />
     </history-entry>
@@ -422,21 +444,41 @@
     <history-entry file="SpaceInvadersTests - 2019.03.23 at 12h 34m 54s.xml">
       <configuration name="SpaceInvadersTests" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SpaceInvadersTests - 2019.03.23 at 13h 48m 21s.xml">
+      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests - 2019.04.12 at 15h 35m 11s.xml">
+      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests - 2019.04.12 at 15h 42m 26s.xml">
+      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests - 2019.04.12 at 16h 11m 48s.xml">
+      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests - 2019.04.12 at 16h 12m 08s.xml">
+      <configuration name="SpaceInvadersTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests_SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded - 2019.04.12 at 16h 12m 59s.xml">
+      <configuration name="SpaceInvadersTests.SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpaceInvadersTests_SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded - 2019.04.12 at 16h 13m 26s.xml">
+      <configuration name="SpaceInvadersTests.SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22222222" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20414993" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.4830986" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23380281" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2633803" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32676056" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3028169" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2535211" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -516,12 +558,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/SpaceInvadersMainScene.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/javax/swing/JFileChooser.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -532,62 +574,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" />
     <entry file="file://$PROJECT_DIR$/log4j2.xml" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/animation/AnimationTimer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="682">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestFiles/TestSave.save" />
     <entry file="file://$PROJECT_DIR$/src/test/java/TestFiles/TestScores.score" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/image/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-818">
           <caret line="145" column="11" selection-start-line="145" selection-start-column="11" selection-end-line="145" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SpaceInvaders.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10032" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ObservableGameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-            <element signature="e#1738#1739#0" expanded="true" />
-            <element signature="e#2230#2231#0" expanded="true" />
-            <element signature="e#2269#2270#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,17 +607,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scoreHelperTest20190323.score" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/ScoreHelper.java">
+    <entry file="file://$PROJECT_DIR$/TestScore_20190323.score" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/animation/AnimationTimer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="173">
+          <caret line="90" column="25" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SavedGameHelper.java">
+    <entry file="file://$PROJECT_DIR$/PlayerScores.score">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="35" column="119" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="119" />
+        <state relative-caret-position="66">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/ObservableGameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="100" column="38" selection-start-line="100" selection-start-column="38" selection-end-line="100" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -633,59 +633,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
-          <folding>
-            <element signature="e#1254#1255#0" expanded="true" />
-            <element signature="e#1294#1295#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
-            <element signature="e#1362#1363#0" expanded="true" />
-            <element signature="e#1396#1397#0" expanded="true" />
-            <element signature="e#1431#1432#0" expanded="true" />
-            <element signature="e#1470#1471#0" expanded="true" />
-            <element signature="e#1503#1504#0" expanded="true" />
-            <element signature="e#1536#1537#0" expanded="true" />
-            <element signature="e#1570#1571#0" expanded="true" />
-            <element signature="e#1604#1605#0" expanded="true" />
-            <element signature="e#1639#1640#0" expanded="true" />
-            <element signature="e#3708#3709#0" expanded="true" />
-            <element signature="e#3743#3744#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/AppConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestScore_20190323.score">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/SavedGameHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+        <state relative-caret-position="550">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameObjectFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -698,35 +654,97 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Torpedo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
+        <state relative-caret-position="619">
           <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/AppConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpaceInvaders.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="735" selection-start-line="735" selection-end-line="735" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/ScoreHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-245">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/GameObjectFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/HighScoreHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controller/GameController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="604" column="52" selection-start-line="604" selection-start-column="52" selection-end-line="604" selection-end-column="52" />
+        <state relative-caret-position="242">
+          <caret line="527" column="13" selection-start-line="527" selection-start-column="13" selection-end-line="527" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PlayerScores.score">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/SpaceInvadersTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-154">
-          <caret line="23" column="36" lean-forward="true" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+        <state relative-caret-position="-1167">
+          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -787,7 +805,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

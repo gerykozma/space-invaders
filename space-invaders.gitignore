@@ -1,0 +1,16 @@
+# Log files
+
+*.log
+*.log.*
+
+# Score file
+
+*.score
+
+# Saved games
+
+*.save
+
+# binaries
+
+target/
