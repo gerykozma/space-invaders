@@ -3,3 +3,7 @@
 *.log.*
 *.save
 /target
+/.idea
+*.iml
+*.ipr
+*.iws
