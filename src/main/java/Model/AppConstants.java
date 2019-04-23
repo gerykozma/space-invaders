@@ -1,10 +1,9 @@
 package Model;
 
 /**
- *Class containing constants that are used across the project.
+ * Class containing constants that are used across the project.
  */
-public final class AppConstants
-{
+public final class AppConstants {
     public static final int MaxGamePaneHeight = 700;
     public static final int MaxGamePaneWidth = 600;
     public static final int EnemyShipYCoordinate = 50;
@@ -20,4 +19,5 @@ public final class AppConstants
     public static final int TorpedoWidth = 5;
     public static final int TorpedoHeight = 15;
     public static final int TorpedoXOffset = 15;
+    public static final int MoveOffset=5;
 }

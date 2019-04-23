@@ -7,3 +7,5 @@
 *.iml
 *.ipr
 *.iws
+.idea/encodings.xml
+.idea/workspace.xml
