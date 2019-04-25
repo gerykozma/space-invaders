@@ -1,23 +1,23 @@
-package Controller;
+package controller;
 
-import Model.AppConstants;
-import Model.GameObject;
-import Model.GameObjectType;
+import model.AppConstants;
+import model.GameObject;
+import model.GameObjectType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
- * Represents the base class for UI objects on the GamePane
+ * Represents the base class for UI objects on the game pane.
  */
 public abstract class ObservableGameObject extends ImageView {
-    private GameObject _gameObject;
+    private GameObject gameObject;
 
-    protected ObservableGameObject(GameObject gameObject) {
-        super(ObjectTypeToImage(gameObject.GetType()));
+    ObservableGameObject(final GameObject gameObject) {
+        super(objectTypeToImage(gameObject.getType()));
 
-        this._gameObject = gameObject;
-        this.setTranslateX(this._gameObject.GetX());
-        this.setTranslateY(this._gameObject.GetY());
+        this.gameObject = gameObject;
+        this.setTranslateX(this.gameObject.getX());
+        this.setTranslateY(this.gameObject.getY());
     }
 
     /**
@@ -25,9 +25,9 @@ public abstract class ObservableGameObject extends ImageView {
      *
      * @return true if the object was moved.
      */
-    public boolean TryMoveLeft() {
-        if (this._gameObject.TrySetX(this._gameObject.GetX() - AppConstants.MoveOffset)) {
-            this.setTranslateX(this._gameObject.GetX());
+    public boolean tryMoveLeft() {
+        if (this.gameObject.trySetX(this.gameObject.getX() - AppConstants.MOVE_OFFSET)) {
+            this.setTranslateX(this.gameObject.getX());
             return true;
         }
         return false;
@@ -38,9 +38,9 @@ public abstract class ObservableGameObject extends ImageView {
      *
      * @return true if the object was moved.
      */
-    public boolean TryMoveRight() {
-        if (this._gameObject.TrySetX(this._gameObject.GetX() + AppConstants.MoveOffset)) {
-            this.setTranslateX(this._gameObject.GetX());
+    public boolean tryMoveRight() {
+        if (this.gameObject.trySetX(this.gameObject.getX() + AppConstants.MOVE_OFFSET)) {
+            this.setTranslateX(this.gameObject.getX());
             return true;
         }
         return false;
@@ -51,9 +51,9 @@ public abstract class ObservableGameObject extends ImageView {
      *
      * @return true if the object was moved.
      */
-    public boolean TryMoveUp() {
-        if (this._gameObject.TrySetY(this._gameObject.GetY() - AppConstants.MoveOffset)) {
-            this.setTranslateY(this._gameObject.GetY());
+    public boolean tryMoveUp() {
+        if (this.gameObject.trySetY(this.gameObject.getY() - AppConstants.MOVE_OFFSET)) {
+            this.setTranslateY(this.gameObject.getY());
             return true;
         }
         return false;
@@ -64,9 +64,9 @@ public abstract class ObservableGameObject extends ImageView {
      *
      * @return true if the object was moved.
      */
-    public boolean TryMoveDown() {
-        if (this._gameObject.TrySetY(this._gameObject.GetY() + AppConstants.MoveOffset)) {
-            this.setTranslateY(this._gameObject.GetY());
+    public boolean tryMoveDown() {
+        if (this.gameObject.trySetY(this.gameObject.getY() + AppConstants.MOVE_OFFSET)) {
+            this.setTranslateY(this.gameObject.getY());
             return true;
         }
         return false;
@@ -75,18 +75,19 @@ public abstract class ObservableGameObject extends ImageView {
     /**
      * Sets the object's state to 'dead' - this will trigger a removal from the UI.
      */
-    public void SetDeath() {
-        this._gameObject.SetToDead();
+    public void setDeath() {
+        this.gameObject.setToDead();
     }
 
     /**
      * Retrieves the underlying object.
+     * @return the underlying game object associated with the observable.
      */
-    public GameObject GetGameObject() {
-        return this._gameObject;
+    public GameObject getGameObject() {
+        return this.gameObject;
     }
 
-    private static final Image ObjectTypeToImage(GameObjectType type) {
+    private static final Image objectTypeToImage(final GameObjectType type) {
         switch (type) {
             case PlayerShip:
                 return new Image("PlayerShip.png");

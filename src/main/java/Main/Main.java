@@ -1,16 +1,16 @@
-package Main;
+package main;
 
-import Controller.gameController;
-import Model.GameLevel;
+import controller.GameController;
+import model.GameLevel;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
-        gameController game = new gameController(primaryStage);
-        game.StartGame(GameLevel.GetInitialLevel());
+    public final void start(final Stage primaryStage) throws Exception {
+        GameController game = new GameController(primaryStage);
+        game.StartGame(GameLevel.getInitialLevel());
     }
 
     public static void main(String[] args) {

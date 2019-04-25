@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import org.apache.log4j.Logger;
 
@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  * Helper class to save player score and determine high scores.
  */
 public final class HighScoreHelper {
-    private static final Logger EventLogger = Logger.getLogger(HighScoreHelper.class);
+    private static final Logger EVENT_LOGGER = Logger.getLogger(HighScoreHelper.class);
 
     /**
      * Saves the given score to the default output file.
@@ -23,8 +23,8 @@ public final class HighScoreHelper {
      * @return True if the score was high score.
      * @throws IOException If an error occurs in file handling.
      */
-    public static boolean SaveScore(Integer score) throws IOException {
-        return SaveScore(score, "PlayerScores.score");
+    public static boolean saveScore(final Integer score) throws IOException {
+        return saveScore(score, "PlayerScores.score");
     }
 
     /**
@@ -35,12 +35,12 @@ public final class HighScoreHelper {
      * @return True if the score was high score.
      * @throws IOException If an error occurs in file handling.
      */
-    public static boolean SaveScore(Integer score, String fileName) throws IOException {
+    public static boolean saveScore(final Integer score, final String fileName) throws IOException {
         List<Integer> playerScores;
         try {
-            playerScores = GetPlayerScoresFromFile(fileName);
+            playerScores = getPlayerScoresFromFile(fileName);
         } catch (IOException ex) {
-            EventLogger.error(ex);
+            EVENT_LOGGER.error(ex);
             throw ex;
         }
 
@@ -55,7 +55,7 @@ public final class HighScoreHelper {
                 bw.newLine();
             }
         } catch (IOException ex) {
-            EventLogger.error(ex);
+            EVENT_LOGGER.error(ex);
             throw ex;
         }
 
@@ -65,29 +65,29 @@ public final class HighScoreHelper {
         return false;
     }
 
-    private static ArrayList<Integer> GetPlayerScoresFromFile(String fileName) throws IOException {
+    private static ArrayList<Integer> getPlayerScoresFromFile(final String fileName) throws IOException {
         File highScores = new File(fileName);
         if (!highScores.exists()) {
-            return new ArrayList<Integer>(0);
+            return new ArrayList<>(0);
         }
 
         ArrayList<Integer> entries = new ArrayList<Integer>();
 
         try (Stream<String> lines = Files.lines(highScores.toPath())) {
-            lines.forEachOrdered(line -> entries.add(TryParseStringToInteger(line)));
+            lines.forEachOrdered(line -> entries.add(tryParseStringToInteger(line)));
         } catch (IOException ex) {
-            EventLogger.error("Error while reading score file: %s", ex);
+            EVENT_LOGGER.error("Error while reading score file: %s", ex);
             throw ex;
         }
 
         return entries;
     }
 
-    private static Integer TryParseStringToInteger(String line) {
+    private static Integer tryParseStringToInteger(final String line) {
         try {
             return Integer.parseInt(line);
         } catch (NumberFormatException ex) {
-            EventLogger.warn(String.format("Unable to parse score. %s", ex));
+            EVENT_LOGGER.warn(String.format("Unable to parse score. %s", ex));
             return 0;
         }
     }

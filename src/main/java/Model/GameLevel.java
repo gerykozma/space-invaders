@@ -1,37 +1,50 @@
-package Model;
+package model;
 
 import java.util.ArrayList;
 
 /**
- * Represents a game level with GameObjects, score and level counter.
+ * Represents a game level with game objects, score and level counter.
  */
 public class GameLevel {
-    private ArrayList<GameObject> _gameObjects;
-    private int _score;
-    private int _level;
+    private ArrayList<GameObject> gameObjects;
+    private int score;
+    private int level;
 
-    public GameLevel(ArrayList<GameObject> gameObjects, int score, int level) {
-        this._gameObjects = gameObjects;
-        this._score = score;
-        this._level = level;
+    public GameLevel(final ArrayList<GameObject> gameObjects, final int score, final int level) {
+        this.gameObjects = gameObjects;
+        this.score = score;
+        this.level = level;
     }
 
     /**
-     * Returns level one.
+     * Returns level one - the initial level.
+     * @return the initial level.
      */
-    public static GameLevel GetInitialLevel() {
+    public static GameLevel getInitialLevel() {
         return new GameLevel(null, 0, 1);
     }
 
-    public ArrayList<GameObject> getGameObjects() {
-        return _gameObjects;
+    /**
+     * Returns the game objects in the level.
+     * @return game objects in the level.
+     * */
+    public final ArrayList<GameObject> getGameObjects() {
+        return gameObjects;
     }
 
-    public int GetScore() {
-        return _score;
+    /**
+     * Returns the player score of the level.
+     * @return the player score of the level.
+     * */
+    public final int getScore() {
+        return score;
     }
 
-    public int GetLevel() {
-        return _level;
+    /**
+     * Returns the player level as number.
+     * @return the player level as number.
+     * */
+    public final int getLevel() {
+        return level;
     }
 }

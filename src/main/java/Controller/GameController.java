@@ -1,6 +1,6 @@
-package Controller;
+package controller;
 
-import Model.*;
+import model.*;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,17 +19,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
-import static Model.GameObjectType.*;
+import static model.GameObjectType.*;
 
 /**
  * Main game engine. Responsible for running the game and managing user inputs.
  */
-public class gameController {
+public class GameController {
 
     /**
      * General event logger instance.
      */
-    private final static Logger EVENT_LOGGER = Logger.getLogger(gameController.class);
+    private final static Logger EVENT_LOGGER = Logger.getLogger(GameController.class);
 
     /**
      * Player ship.
@@ -53,13 +53,13 @@ public class gameController {
     private Random randomGenerator;
 
     /**
-     * Creates an initialized gameController object.
+     * Creates an initialized GameController object.
      *
-     * @param primaryStage the main stage(window)
+     * @param primaryStage the Main stage(window)
      * @throws IOException              when the fxml file cannot be loaded
      * @throws IllegalArgumentException when primaryStage is null
      */
-    public gameController(Stage primaryStage) throws IOException, IllegalArgumentException {
+    public GameController(Stage primaryStage) throws IOException, IllegalArgumentException {
         if (primaryStage == null) {
             EVENT_LOGGER.debug("primarystage was null. ");
             throw new IllegalArgumentException("primaryStage cannot be null. Pass a valid stage to build upon.");
@@ -106,7 +106,7 @@ public class gameController {
                     "Error while loading element from fxml.");
         }
 
-        this.gamePane.setPrefSize(AppConstants.MaxGamePaneWidth, AppConstants.MaxGamePaneHeight);
+        this.gamePane.setPrefSize(AppConstants.MAX_GAME_PANE_WIDTH, AppConstants.MAX_GAME_PANE_HEIGHT);
         this.gamePane.setFocusTraversable(true);
 
         this.gamePane.setOnKeyPressed(event ->
@@ -187,7 +187,7 @@ public class gameController {
         }
 
         GameLevel loadedLevel = SavedGameHelper
-                .LoadGame(fileChooser.getSelectedFile().getPath());
+                .loadGame(fileChooser.getSelectedFile().getPath());
         if (loadedLevel != null) {
             EVENT_LOGGER.info("Game level loaded from file.");
             this.InitNewLevel(loadedLevel);
@@ -218,17 +218,17 @@ public class gameController {
         ArrayList<GameObject> gameObjects = this.gamePane
                 .getChildren()
                 .stream()
-                .map(o -> ((ObservableGameObject) o).GetGameObject())
+                .map(o -> ((ObservableGameObject) o).getGameObject())
                 .collect(Collectors.toCollection(ArrayList::new));
 
         GameLevel level = new GameLevel(
                 gameObjects,
-                this.scoreHelper.GetScore(),
-                this.scoreHelper.GetLevel());
+                this.scoreHelper.getScore(),
+                this.scoreHelper.getLevel());
 
         String message;
         String folderPathToSave = fileChooser.getSelectedFile().getPath();
-        if (SavedGameHelper.SaveGame(folderPathToSave, level)) {
+        if (SavedGameHelper.saveGame(folderPathToSave, level)) {
             message = "Game saved successfully.";
         } else {
             message = "Failed to save game.";
@@ -244,7 +244,7 @@ public class gameController {
         this.isPaused = false;
         this.timer.stop();
         this.scoreHelper = new ScoreHelper(0, 1);
-        this.StartGame(GameLevel.GetInitialLevel());
+        this.StartGame(GameLevel.getInitialLevel());
     }
 
     /**
@@ -259,11 +259,11 @@ public class gameController {
 
         EVENT_LOGGER.debug("Saving player score..");
         try {
-            if (HighScoreHelper.SaveScore(this.scoreHelper.GetScore())) {
+            if (HighScoreHelper.saveScore(this.scoreHelper.getScore())) {
                 EVENT_LOGGER.info("Player achieved new high score.");
                 JOptionPane.showMessageDialog(
                         null,
-                        String.format("New HIGH SCORE: %s !!", this.scoreHelper.GetScore()));
+                        String.format("New HIGH SCORE: %s !!", this.scoreHelper.getScore()));
             }
         } catch (IOException ex) {
             EVENT_LOGGER.warn("Something went wrong while saving player score." +
@@ -273,16 +273,16 @@ public class gameController {
         String message;
         if (playerWon) {
             message = String.format("Congratulations! You beat the game with a score of: %s",
-                    this.scoreHelper.GetScoreAsString());
+                    this.scoreHelper.getScoreAsString());
             EVENT_LOGGER.info("Player won.");
         } else {
             message = String.format("You are Dead! You made it to level: %s with a score of %s",
-                    this.scoreHelper.GetLevelAsString(),
-                    this.scoreHelper.GetScoreAsString());
+                    this.scoreHelper.getLevelAsString(),
+                    this.scoreHelper.getScoreAsString());
 
             EVENT_LOGGER.info(String.format("Player lost the game. Level %s, Score %s",
-                    this.scoreHelper.GetLevelAsString(),
-                    this.scoreHelper.GetScoreAsString()));
+                    this.scoreHelper.getLevelAsString(),
+                    this.scoreHelper.getScoreAsString()));
         }
         JOptionPane.showMessageDialog(null, message);
     }
@@ -338,18 +338,18 @@ public class gameController {
         EVENT_LOGGER.debug("Moving enemies.");
         List<SpaceShip> enemyShips = GetGameObjects()
                 .stream()
-                .filter(o -> o.GetGameObject().GetType().equals(EnemyShip))
+                .filter(o -> o.getGameObject().getType().equals(EnemyShip))
                 .map(o -> (SpaceShip) o)
                 .collect(Collectors.toList());
 
         for (SpaceShip enemyShip : enemyShips) {
 
             if (this.enemyMoveToRight) {
-                if (!enemyShip.TryMoveRight()) {
+                if (!enemyShip.tryMoveRight()) {
                     this.enemyMoveToRight = !this.enemyMoveToRight;
                 }
             } else {
-                if (!enemyShip.TryMoveLeft()) {
+                if (!enemyShip.tryMoveLeft()) {
                     this.enemyMoveToRight = !this.enemyMoveToRight;
                 }
             }
@@ -364,7 +364,7 @@ public class gameController {
     private void EnemyShootTorpedoes() {
         List<SpaceShip> enemyShips = GetGameObjects()
                 .stream()
-                .filter(o -> o.GetGameObject().GetType().equals(EnemyShip))
+                .filter(o -> o.getGameObject().getType().equals(EnemyShip))
                 .map(o -> (SpaceShip) o)
                 .collect(Collectors.toList());
 
@@ -378,8 +378,8 @@ public class gameController {
 
     private boolean AnyEnemyShipAlive() {
         for (ObservableGameObject gameObject : this.GetGameObjects()) {
-            if (gameObject.GetGameObject().GetType().equals(EnemyShip)
-                    && !gameObject.GetGameObject().GetIsDead()) {
+            if (gameObject.getGameObject().getType().equals(EnemyShip)
+                    && !gameObject.getGameObject().getIsDead()) {
                 return true;
             }
         }
@@ -391,14 +391,14 @@ public class gameController {
      * the level count reaches it's maximum the game is ended here and the player is victorious.
      */
     private void IncreaseLevel() {
-        if (this.scoreHelper.GetLevel() < AppConstants.MaxLevelNumber) {
+        if (this.scoreHelper.getLevel() < AppConstants.MAX_LEVEL_NUMBER) {
             EVENT_LOGGER.info("Increasing game level..");
-            this.scoreHelper.IncreaseLevel();
+            this.scoreHelper.increaseLevel();
             this.InitNewLevel(new GameLevel(
                     null,
-                    this.scoreHelper.GetScore(),
-                    this.scoreHelper.GetLevel()));
-        } else if (this.scoreHelper.GetLevel() == AppConstants.MaxLevelNumber) {
+                    this.scoreHelper.getScore(),
+                    this.scoreHelper.getLevel()));
+        } else if (this.scoreHelper.getLevel() == AppConstants.MAX_LEVEL_NUMBER) {
             this.EndGame(true);
         }
     }
@@ -419,18 +419,18 @@ public class gameController {
      */
     private void UpdatePlayerTorpedoes() {
         for (ObservableGameObject playerTorpedo : this.GetGameObjects()) {
-            if (playerTorpedo.GetGameObject().GetType().equals(PlayerTorpedo)) {
-                playerTorpedo.TryMoveUp();
+            if (playerTorpedo.getGameObject().getType().equals(PlayerTorpedo)) {
+                playerTorpedo.tryMoveUp();
                 this.GetGameObjects()
                         .stream()
-                        .filter(enemy -> enemy.GetGameObject().GetType().equals(EnemyShip))
+                        .filter(enemy -> enemy.getGameObject().getType().equals(EnemyShip))
                         .forEach(enemy ->
                         {
-                            if (playerTorpedo.GetGameObject().Intersect(enemy.GetGameObject())) {
-                                enemy.SetDeath();
-                                playerTorpedo.SetDeath();
-                                this.scoreHelper.IncreaseScore();
-                                this.scoreLabel.setText(this.scoreHelper.GetScoreAsString());
+                            if (playerTorpedo.getGameObject().intersect(enemy.getGameObject())) {
+                                enemy.setDeath();
+                                playerTorpedo.setDeath();
+                                this.scoreHelper.increaseScore();
+                                this.scoreLabel.setText(this.scoreHelper.getScoreAsString());
                                 EVENT_LOGGER.info("Enemy ship destroyed.");
                             }
                         });
@@ -443,11 +443,11 @@ public class gameController {
      */
     private void UpDateEnemyTorpedoes() {
         for (ObservableGameObject enemyTorpedo : this.GetGameObjects()) {
-            if (enemyTorpedo.GetGameObject().GetType().equals(EnemyTorpedo)) {
-                enemyTorpedo.TryMoveDown();
-                if (enemyTorpedo.GetGameObject().Intersect(this.player.GetGameObject())) {
-                    this.player.SetDeath();
-                    enemyTorpedo.SetDeath();
+            if (enemyTorpedo.getGameObject().getType().equals(EnemyTorpedo)) {
+                enemyTorpedo.tryMoveDown();
+                if (enemyTorpedo.getGameObject().intersect(this.player.getGameObject())) {
+                    this.player.setDeath();
+                    enemyTorpedo.setDeath();
                     EVENT_LOGGER.info("Player ship destroyed.");
                 }
             }
@@ -458,7 +458,7 @@ public class gameController {
      * Checks whether the player is alive. If not, the game is ended.
      */
     private void CheckPlayerStatus() {
-        if (this.player.GetGameObject().GetIsDead()) {
+        if (this.player.getGameObject().getIsDead()) {
             EVENT_LOGGER.info("Player is Dead.");
             this.EndGame(false);
         }
@@ -473,7 +473,7 @@ public class gameController {
         EVENT_LOGGER.debug("Removing dead objects.");
         List<ObservableGameObject> deadObjects = this.GetGameObjects()
                 .stream()
-                .filter(obj -> obj.GetGameObject().GetIsDead())
+                .filter(obj -> obj.getGameObject().getIsDead())
                 .collect(Collectors.toList());
 
         this.gamePane.getChildren().removeAll(deadObjects);
@@ -491,11 +491,11 @@ public class gameController {
         this.gamePane.getChildren().removeAll(this.GetGameObjects());
         this.enemyMoveTimer = 0;
 
-        this.levelLabel.setText(String.format("%s", gameLevel.GetLevel()));
-        this.scoreLabel.setText(String.format("%s", gameLevel.GetScore()));
+        this.levelLabel.setText(String.format("%s", gameLevel.getLevel()));
+        this.scoreLabel.setText(String.format("%s", gameLevel.getScore()));
 
         if (gameLevel.getGameObjects() == null) {
-            this.player = ObservableGameObjectFactory.CreatePlayerShip();
+            this.player = ObservableGameObjectFactory.createPlayerShip();
             EVENT_LOGGER.debug("Player created.");
 
             this.gamePane.getChildren().add(player);
@@ -503,12 +503,12 @@ public class gameController {
 
             this.gamePane
                     .getChildren()
-                    .addAll(ObservableGameObjectFactory.CreateEnemyShips(gameLevel.GetLevel()));
+                    .addAll(ObservableGameObjectFactory.createEnemyShips(gameLevel.getLevel()));
             EVENT_LOGGER.debug("Enemy ships added to GamePane.");
         } else {
             for (GameObject gameObject : gameLevel.getGameObjects()) {
                 ArrayList<ObservableGameObject> objectsLoaded = new ArrayList<>();
-                switch (gameObject.GetType()) {
+                switch (gameObject.getType()) {
                     case PlayerShip:
                         this.player = new SpaceShip(gameObject);
                         objectsLoaded.add(this.player);
@@ -522,7 +522,7 @@ public class gameController {
                         break;
                 }
 
-                this.scoreHelper = new ScoreHelper(gameLevel.GetScore(), gameLevel.GetLevel());
+                this.scoreHelper = new ScoreHelper(gameLevel.getScore(), gameLevel.getLevel());
 
                 this.gamePane.getChildren().addAll(objectsLoaded);
                 EVENT_LOGGER.info("Saved game loaded.");
@@ -536,7 +536,7 @@ public class gameController {
      * @param shooter parent of the torpedo object. Either the player or an enemy ship.
      */
     private void Shoot(SpaceShip shooter) {
-        Torpedo torpedo = ObservableGameObjectFactory.CreateTorpedo(shooter);
+        Torpedo torpedo = ObservableGameObjectFactory.createTorpedo(shooter);
         this.gamePane.getChildren().add(torpedo);
         EVENT_LOGGER.debug(String.format("Torpedo shot by %s.", shooter.toString()));
     }
@@ -559,7 +559,7 @@ public class gameController {
      */
     private void TryPlayerMoveLeft() {
         if (!this.isPaused) {
-            this.player.TryMoveLeft();
+            this.player.tryMoveLeft();
         }
     }
 
@@ -569,7 +569,7 @@ public class gameController {
      */
     private void TryPlayerMoveRight() {
         if (!this.isPaused) {
-            this.player.TryMoveRight();
+            this.player.tryMoveRight();
         }
     }
 
@@ -577,7 +577,7 @@ public class gameController {
      * Pauses the game. Scene update will be interrupted, UI objects will freeze.
      */
     private void PauseGame() {
-        if (this.player.GetGameObject().GetIsDead()) {
+        if (this.player.getGameObject().getIsDead()) {
             return;
         }
 

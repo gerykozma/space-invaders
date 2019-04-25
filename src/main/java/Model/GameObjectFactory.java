@@ -1,44 +1,44 @@
-package Model;
+package model;
 
 /**
  * Factory to obtain GameObjects.
  */
 public final class GameObjectFactory {
-    public static GameObject CreatePlayerObject() {
+    public static GameObject createPlayerObject() {
         return new GameObject(
-                AppConstants.PlayerShipXCoordinate,
-                AppConstants.PlayerShipYCoordinate,
-                AppConstants.PlayerShipWidth,
-                AppConstants.PlayerShipHeight,
+                AppConstants.PLAYER_SHIP_X_COORDINATE,
+                AppConstants.PLAYER_SHIP_Y_COORDINATE,
+                AppConstants.PLAYER_SHIP_WIDTH,
+                AppConstants.PLAYER_SHIP_HEIGHT,
                 GameObjectType.PlayerShip);
     }
 
-    public static GameObject CreateEnemyObject() {
+    public static GameObject createEnemyObject() {
         return new GameObject(
-                AppConstants.EnemyShipXCoordinate,
-                AppConstants.EnemyShipYCoordinate,
-                AppConstants.EnemyShipWidth,
-                AppConstants.EnemyShipHeight,
+                AppConstants.ENEMY_SHIP_X_COORDINATE,
+                AppConstants.ENEMY_SHIP_Y_COORDINATE,
+                AppConstants.ENEMY_SHIP_WIDTH,
+                AppConstants.ENEMY_SHIP_HEIGHT,
                 GameObjectType.EnemyShip);
     }
 
-    public static GameObject CreatePlayerTorpedoObject(double parentXCoordinate, double parentYCoordinate) {
-        return InnerCreateTorpedoObject(parentXCoordinate, parentYCoordinate, GameObjectType.PlayerTorpedo);
+    public static GameObject createPlayerTorpedoObject(final double parentXCoordinate, final double parentYCoordinate) {
+        return innerCreateTorpedoObject(parentXCoordinate, parentYCoordinate, GameObjectType.PlayerTorpedo);
     }
 
-    public static GameObject CreateEnemyTorpedoObject(double parentXCoordinate, double parentYCoordinate) {
-        return InnerCreateTorpedoObject(parentXCoordinate, parentYCoordinate, GameObjectType.EnemyTorpedo);
+    public static GameObject createEnemyTorpedoObject(final double parentXCoordinate, final double parentYCoordinate) {
+        return innerCreateTorpedoObject(parentXCoordinate, parentYCoordinate, GameObjectType.EnemyTorpedo);
     }
 
-    private static GameObject InnerCreateTorpedoObject(
-            double parentXCoordinate,
-            double parentYCoordinate,
-            GameObjectType type) {
+    private static GameObject innerCreateTorpedoObject(
+            final double parentXCoordinate,
+            final double parentYCoordinate,
+            final GameObjectType type) {
         return new GameObject(
-                parentXCoordinate + AppConstants.TorpedoXOffset,
+                parentXCoordinate + AppConstants.TORPEDO_X_OFFSET,
                 parentYCoordinate,
-                AppConstants.TorpedoWidth,
-                AppConstants.TorpedoHeight,
+                AppConstants.TORPEDO_WIDTH,
+                AppConstants.TORPEDO_HEIGHT,
                 type);
     }
 }

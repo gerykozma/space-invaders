@@ -1,44 +1,44 @@
-package Model;
+package model;
 
 /**
  * Represents a score and level count tracking object.
  */
 public class ScoreHelper {
-    private int _score;
-    private int _level;
+    private int score;
+    private int level;
 
-    public ScoreHelper(int score, int level) {
-        this._score = score;
-        this._level = level;
+    public ScoreHelper(final int score, final int level) {
+        this.score = score;
+        this.level = level;
     }
 
     /**
      * Increases the score based on the level.
      */
-    public void IncreaseScore() {
-        this._score = this._score + AppConstants.DestroyedEnemyShipBaseScore * this._level;
+    public final void increaseScore() {
+        this.score = this.score + AppConstants.DESTROYED_ENEMY_SHIP_BASE_SCORE * this.level;
     }
 
     /**
      * Increases level counter.
      */
-    public void IncreaseLevel() {
-        this._level++;
+    public final void increaseLevel() {
+        this.level++;
     }
 
-    public int GetScore() {
-        return this._score;
+    public final int getScore() {
+        return this.score;
     }
 
-    public String GetScoreAsString() {
-        return String.format("%s", this._score);
+    public final String getScoreAsString() {
+        return String.format("%s", this.score);
     }
 
-    public String GetLevelAsString() {
-        return String.format("%s", this._level);
+    public final String getLevelAsString() {
+        return String.format("%s", this.level);
     }
 
-    public int GetLevel() {
-        return this._level;
+    public final int getLevel() {
+        return this.level;
     }
 }

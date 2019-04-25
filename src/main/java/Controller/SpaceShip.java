@@ -1,12 +1,17 @@
-package Controller;
+package controller;
 
-import Model.GameObject;
+import model.GameObject;
 
 /**
  * Serves as the skeleton for player and enemy ships.
  */
 public class SpaceShip extends ObservableGameObject {
-    public SpaceShip(GameObject gameObject) {
+
+    /**
+     * Creates a new observable spaceship object.
+     * @param gameObject underlying game object.
+     * */
+    public SpaceShip(final GameObject gameObject) {
         super(gameObject);
     }
 }

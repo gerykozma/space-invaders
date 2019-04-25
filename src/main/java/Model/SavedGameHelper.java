@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ import org.apache.log4j.Logger;
  * Helper class for handling save (serialization) and load (deserialization) game level operation.
  */
 public class SavedGameHelper {
-    private final static Logger EventLogger = Logger.getLogger(SavedGameHelper.class);
+    private static final Logger EVENT_LOGGER = Logger.getLogger(SavedGameHelper.class);
     private static Gson gson = new Gson();
 
     /**
@@ -25,7 +25,7 @@ public class SavedGameHelper {
      * @param save     Game level to be serialized.
      * @return True if the level was successfully saved.
      */
-    public static final boolean SaveGame(String filePath, GameLevel save) {
+    public static final boolean saveGame(final String filePath, final GameLevel save) {
         if (save == null) {
             throw new IllegalArgumentException("Save cannot be null");
         }
@@ -35,10 +35,10 @@ public class SavedGameHelper {
         try {
             Files.write(Paths.get(filePath, fileName), json.getBytes());
         } catch (IOException ex) {
-            EventLogger.error(String.format("Error while saving: %s", ex));
+            EVENT_LOGGER.error(String.format("Error while saving: %s", ex));
             return false;
         }
-        EventLogger.info(String.format("Game saved to: %s", Paths.get(filePath, fileName)));
+        EVENT_LOGGER.info(String.format("Game saved to: %s", Paths.get(filePath, fileName)));
         return true;
     }
 
@@ -48,7 +48,7 @@ public class SavedGameHelper {
      * @param filePath File for the game level to be loaded from.
      * @return The loaded (deserialized) game level.
      */
-    public static final GameLevel LoadGame(String filePath) {
+    public static final GameLevel loadGame(final String filePath) {
         Path path = Paths.get(filePath);
         if (!Files.exists(path)) {
             return null;
@@ -58,7 +58,7 @@ public class SavedGameHelper {
         try {
             jsonLines = Files.readAllLines(path);
         } catch (IOException ex) {
-            EventLogger.error(String.format("Error while loading: %s", ex));
+            EVENT_LOGGER.error(String.format("Error while loading: %s", ex));
             return null;
         }
 

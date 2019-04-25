@@ -1,4 +1,4 @@
-import Model.*;
+import model.*;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import static Model.GameObjectFactory.*;
+import static model.GameObjectFactory.*;
 import static org.junit.Assert.*;
 
 public class SpaceInvadersTests {
@@ -19,21 +19,23 @@ public class SpaceInvadersTests {
     public void CalculateScore_MultipleLevels_CorrectScore() {
         ScoreHelper scoreHelper = new ScoreHelper(0, 1);
 
-        scoreHelper.IncreaseScore();
-        scoreHelper.IncreaseScore();
-        scoreHelper.IncreaseScore();
-        scoreHelper.IncreaseLevel();
-        scoreHelper.IncreaseScore();
-        scoreHelper.IncreaseScore();
-        scoreHelper.IncreaseLevel();
-        scoreHelper.IncreaseScore();
+        scoreHelper.increaseScore();
+        scoreHelper.increaseScore();
+        scoreHelper.increaseScore();
+        scoreHelper.increaseLevel();
+        scoreHelper.increaseScore();
+        scoreHelper.increaseScore();
+        scoreHelper.increaseLevel();
+        scoreHelper.increaseScore();
 
-        assertEquals(scoreHelper.GetScore(), 1000);
+        assertEquals(scoreHelper.getScore(), 1000);
+        assertEquals(scoreHelper.getLevel(), 3);
+        assertEquals(scoreHelper.getScoreAsString(), "1000");
+        assertEquals(scoreHelper.getLevelAsString(), "3");
     }
 
     @Test
-    public void SaveScore_HighScoreAndSimpleScore_ScoreSaved() throws IOException
-    {
+    public void SaveScore_HighScoreAndSimpleScore_ScoreSaved() throws IOException {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("1000\n");
         stringBuilder.append("100\n");
@@ -44,79 +46,83 @@ public class SpaceInvadersTests {
 
         Files.write(Paths.get(fileName), stringBuilder.toString().getBytes());
 
-        assertFalse(HighScoreHelper.SaveScore(999, fileName));
-        assertFalse(HighScoreHelper.SaveScore(99, fileName));
-        assertFalse(HighScoreHelper.SaveScore(9, fileName));
-        assertFalse(HighScoreHelper.SaveScore(0, fileName));
-        assertFalse(HighScoreHelper.SaveScore(-999, fileName));
-        assertTrue(HighScoreHelper.SaveScore(9999, fileName));
+        assertFalse(HighScoreHelper.saveScore(999, fileName));
+        assertFalse(HighScoreHelper.saveScore(99, fileName));
+        assertFalse(HighScoreHelper.saveScore(9, fileName));
+        assertFalse(HighScoreHelper.saveScore(0, fileName));
+        assertFalse(HighScoreHelper.saveScore(-999, fileName));
+        assertTrue(HighScoreHelper.saveScore(9999, fileName));
     }
 
     @Test
-    public void CreateGameObject_CreatePlayerObject_ObjectCreated()
-    {
-        GameObject player = CreatePlayerObject();
+    public void CreateGameObject_CreatePlayerObject_ObjectCreated() {
+        GameObject player = createPlayerObject();
 
         assertNotNull(player);
-        assertEquals(player.GetX(),  AppConstants.PlayerShipXCoordinate, ErrorThreshold);
-        assertEquals(player.GetY(),  AppConstants.PlayerShipYCoordinate, ErrorThreshold);
-        assertEquals(player.GetWidth(), AppConstants.PlayerShipWidth);
-        assertEquals(player.GetHeight(), AppConstants.PlayerShipHeight);
-        assertEquals(player.GetType(), GameObjectType.PlayerShip);
+        assertEquals(player.getX(), AppConstants.PLAYER_SHIP_X_COORDINATE, ErrorThreshold);
+        assertEquals(player.getY(), AppConstants.PLAYER_SHIP_Y_COORDINATE, ErrorThreshold);
+        assertEquals(player.getWidth(), AppConstants.PLAYER_SHIP_WIDTH);
+        assertEquals(player.getHeight(), AppConstants.PLAYER_SHIP_HEIGHT);
+        assertEquals(player.getType(), GameObjectType.PlayerShip);
     }
 
     @Test
-    public void CreateGameObject_CreateEnemyObject_ObjectCreated()
-    {
-        GameObject enemy = CreateEnemyObject();
+    public void SetGameObjectToDead_OnObjectDeath_ObjectIsKilled() {
+        GameObject player = createPlayerObject();
+
+        player.setToDead();
+
+        assertTrue(player.getIsDead());
+    }
+
+    @Test
+    public void CreateGameObject_CreateEnemyObject_ObjectCreated() {
+        GameObject enemy = createEnemyObject();
 
         assertNotNull(enemy);
-        assertEquals(enemy.GetX(),  AppConstants.EnemyShipXCoordinate, ErrorThreshold);
-        assertEquals(enemy.GetY(),  AppConstants.EnemyShipYCoordinate, ErrorThreshold);
-        assertEquals(enemy.GetWidth(), AppConstants.EnemyShipWidth);
-        assertEquals(enemy.GetHeight(), AppConstants.EnemyShipHeight);
-        assertEquals(enemy.GetType(), GameObjectType.EnemyShip);
+        assertEquals(enemy.getX(), AppConstants.ENEMY_SHIP_X_COORDINATE, ErrorThreshold);
+        assertEquals(enemy.getY(), AppConstants.ENEMY_SHIP_Y_COORDINATE, ErrorThreshold);
+        assertEquals(enemy.getWidth(), AppConstants.ENEMY_SHIP_WIDTH);
+        assertEquals(enemy.getHeight(), AppConstants.ENEMY_SHIP_HEIGHT);
+        assertEquals(enemy.getType(), GameObjectType.EnemyShip);
     }
 
     @Test
-    public void CreateGameObject_CreatePlayerTorpedoObject_ObjectCreated()
-    {
-        GameObject playerTorpedo = CreatePlayerTorpedoObject(
-                AppConstants.PlayerShipXCoordinate,
-                AppConstants.PlayerShipYCoordinate);
+    public void CreateGameObject_CreatePlayerTorpedoObject_ObjectCreated() {
+        GameObject playerTorpedo = createPlayerTorpedoObject(
+                AppConstants.PLAYER_SHIP_X_COORDINATE,
+                AppConstants.PLAYER_SHIP_Y_COORDINATE);
 
         assertNotNull(playerTorpedo);
-        assertEquals(playerTorpedo.GetX(),  AppConstants.PlayerShipXCoordinate + AppConstants.TorpedoXOffset, ErrorThreshold);
-        assertEquals(playerTorpedo.GetY(),  AppConstants.PlayerShipYCoordinate, ErrorThreshold);
-        assertEquals(playerTorpedo.GetWidth(), AppConstants.TorpedoWidth);
-        assertEquals(playerTorpedo.GetHeight(), AppConstants.TorpedoHeight);
-        assertEquals(playerTorpedo.GetType(), GameObjectType.PlayerTorpedo);
+        assertEquals(playerTorpedo.getX(), AppConstants.PLAYER_SHIP_X_COORDINATE + AppConstants.TORPEDO_X_OFFSET, ErrorThreshold);
+        assertEquals(playerTorpedo.getY(), AppConstants.PLAYER_SHIP_Y_COORDINATE, ErrorThreshold);
+        assertEquals(playerTorpedo.getWidth(), AppConstants.TORPEDO_WIDTH);
+        assertEquals(playerTorpedo.getHeight(), AppConstants.TORPEDO_HEIGHT);
+        assertEquals(playerTorpedo.getType(), GameObjectType.PlayerTorpedo);
     }
 
     @Test
-    public void CreateGameObject_CreateEnemyTorpedoObject_ObjectCreated()
-    {
-        GameObject enemyTorpedo = CreateEnemyTorpedoObject(
-                AppConstants.EnemyShipXCoordinate,
-                AppConstants.EnemyShipYCoordinate);
+    public void CreateGameObject_CreateEnemyTorpedoObject_ObjectCreated() {
+        GameObject enemyTorpedo = createEnemyTorpedoObject(
+                AppConstants.ENEMY_SHIP_X_COORDINATE,
+                AppConstants.ENEMY_SHIP_Y_COORDINATE);
 
         assertNotNull(enemyTorpedo);
-        assertEquals(enemyTorpedo.GetX(),  AppConstants.EnemyShipXCoordinate + AppConstants.TorpedoXOffset, ErrorThreshold);
-        assertEquals(enemyTorpedo.GetY(),  AppConstants.EnemyShipYCoordinate, ErrorThreshold);
-        assertEquals(enemyTorpedo.GetWidth(), AppConstants.TorpedoWidth);
-        assertEquals(enemyTorpedo.GetHeight(), AppConstants.TorpedoHeight);
-        assertEquals(enemyTorpedo.GetType(), GameObjectType.EnemyTorpedo);
+        assertEquals(enemyTorpedo.getX(), AppConstants.ENEMY_SHIP_X_COORDINATE + AppConstants.TORPEDO_X_OFFSET, ErrorThreshold);
+        assertEquals(enemyTorpedo.getY(), AppConstants.ENEMY_SHIP_Y_COORDINATE, ErrorThreshold);
+        assertEquals(enemyTorpedo.getWidth(), AppConstants.TORPEDO_WIDTH);
+        assertEquals(enemyTorpedo.getHeight(), AppConstants.TORPEDO_HEIGHT);
+        assertEquals(enemyTorpedo.getType(), GameObjectType.EnemyTorpedo);
     }
 
     @Test
-    public void SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded()
-    {
+    public void SaveGameHelper_SaveAndLoadLevel_LevelSuccessfullySavedAndLoaded() {
         ArrayList<GameObject> objects = new ArrayList<>();
 
-        GameObject player = CreatePlayerObject();
-        GameObject enemy = CreateEnemyObject();
-        GameObject playerTorpedo = CreatePlayerTorpedoObject(100,100);
-        GameObject enemyTorpedo = CreateEnemyTorpedoObject(200, 200);
+        GameObject player = createPlayerObject();
+        GameObject enemy = createEnemyObject();
+        GameObject playerTorpedo = createPlayerTorpedoObject(100, 100);
+        GameObject enemyTorpedo = createEnemyTorpedoObject(200, 200);
         objects.add(player);
         objects.add(enemy);
         objects.add(playerTorpedo);
@@ -124,115 +130,101 @@ public class SpaceInvadersTests {
 
         GameLevel level = new GameLevel(objects, 1000, 5);
 
-        SavedGameHelper.SaveGame("", level);
+        SavedGameHelper.saveGame("", level);
 
-        String fileName =String.format("SavedGame_%s.save", LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
+        String fileName = String.format("SavedGame_%s.save", LocalDateTime.now().format(DateTimeFormatter.BASIC_ISO_DATE));
 
-        GameLevel loaded = SavedGameHelper.LoadGame(fileName);
+        GameLevel loaded = SavedGameHelper.loadGame(fileName);
         assertEquals(4, loaded.getGameObjects().size());
-       for(GameObject gameObject : loaded.getGameObjects())
-       {
-           assertNotNull(gameObject);
-           if (gameObject.GetType().equals(GameObjectType.PlayerShip))
-           {
-               assertEquals(gameObject.GetX(),  AppConstants.PlayerShipXCoordinate, ErrorThreshold);
-               assertEquals(gameObject.GetY(),  AppConstants.PlayerShipYCoordinate, ErrorThreshold);
-               assertEquals(gameObject.GetWidth(), AppConstants.PlayerShipWidth);
-               assertEquals(gameObject.GetHeight(), AppConstants.PlayerShipHeight);
-           }
-           else if(gameObject.GetType().equals(GameObjectType.EnemyShip))
-           {
-               assertEquals(gameObject.GetX(),  AppConstants.EnemyShipXCoordinate, ErrorThreshold);
-               assertEquals(gameObject.GetY(),  AppConstants.EnemyShipYCoordinate, ErrorThreshold);
-               assertEquals(gameObject.GetWidth(), AppConstants.EnemyShipWidth);
-               assertEquals(gameObject.GetHeight(), AppConstants.EnemyShipHeight);
-           }
-           else if(gameObject.GetType().equals(GameObjectType.PlayerTorpedo))
-           {
-               assertEquals(gameObject.GetX(),  100+AppConstants.TorpedoXOffset, ErrorThreshold);
-               assertEquals(gameObject.GetY(),  100, ErrorThreshold);
-               assertEquals(gameObject.GetWidth(), AppConstants.TorpedoWidth);
-               assertEquals(gameObject.GetHeight(), AppConstants.TorpedoHeight);
-           }
-           else if(gameObject.GetType().equals(GameObjectType.EnemyTorpedo))
-           {
-               assertEquals(gameObject.GetX(),  200 + AppConstants.TorpedoXOffset, ErrorThreshold);
-               assertEquals(gameObject.GetY(),  200, ErrorThreshold);
-               assertEquals(gameObject.GetWidth(), AppConstants.TorpedoWidth);
-               assertEquals(gameObject.GetHeight(), AppConstants.TorpedoHeight);
-           }
-       }
+        for (GameObject gameObject : loaded.getGameObjects()) {
+            assertNotNull(gameObject);
+            if (gameObject.getType().equals(GameObjectType.PlayerShip)) {
+                assertEquals(gameObject.getX(), AppConstants.PLAYER_SHIP_X_COORDINATE, ErrorThreshold);
+                assertEquals(gameObject.getY(), AppConstants.PLAYER_SHIP_Y_COORDINATE, ErrorThreshold);
+                assertEquals(gameObject.getWidth(), AppConstants.PLAYER_SHIP_WIDTH);
+                assertEquals(gameObject.getHeight(), AppConstants.PLAYER_SHIP_HEIGHT);
+            } else if (gameObject.getType().equals(GameObjectType.EnemyShip)) {
+                assertEquals(gameObject.getX(), AppConstants.ENEMY_SHIP_X_COORDINATE, ErrorThreshold);
+                assertEquals(gameObject.getY(), AppConstants.ENEMY_SHIP_Y_COORDINATE, ErrorThreshold);
+                assertEquals(gameObject.getWidth(), AppConstants.ENEMY_SHIP_WIDTH);
+                assertEquals(gameObject.getHeight(), AppConstants.ENEMY_SHIP_HEIGHT);
+            } else if (gameObject.getType().equals(GameObjectType.PlayerTorpedo)) {
+                assertEquals(gameObject.getX(), 100 + AppConstants.TORPEDO_X_OFFSET, ErrorThreshold);
+                assertEquals(gameObject.getY(), 100, ErrorThreshold);
+                assertEquals(gameObject.getWidth(), AppConstants.TORPEDO_WIDTH);
+                assertEquals(gameObject.getHeight(), AppConstants.TORPEDO_HEIGHT);
+            } else if (gameObject.getType().equals(GameObjectType.EnemyTorpedo)) {
+                assertEquals(gameObject.getX(), 200 + AppConstants.TORPEDO_X_OFFSET, ErrorThreshold);
+                assertEquals(gameObject.getY(), 200, ErrorThreshold);
+                assertEquals(gameObject.getWidth(), AppConstants.TORPEDO_WIDTH);
+                assertEquals(gameObject.getHeight(), AppConstants.TORPEDO_HEIGHT);
+            }
+        }
 
-       assertEquals(loaded.GetScore(), 1000);
-       assertEquals(loaded.GetLevel(), 5);
+        assertEquals(loaded.getScore(), 1000);
+        assertEquals(loaded.getLevel(), 5);
     }
 
     @Test
-    public void SetX_ValidX_ReturnsTrue()
-    {
-        GameObject dummy = CreatePlayerObject();
+    public void SetX_ValidX_ReturnsTrue() {
+        GameObject dummy = createPlayerObject();
 
-        assertTrue(dummy.TrySetX(100));
-        assertTrue(dummy.TrySetX(10));
-        assertTrue(dummy.TrySetX(500));
-        assertTrue(dummy.TrySetX(AppConstants.MaxGamePaneWidth - dummy.GetWidth()));
+        assertTrue(dummy.trySetX(100));
+        assertTrue(dummy.trySetX(10));
+        assertTrue(dummy.trySetX(500));
+        assertTrue(dummy.trySetX(AppConstants.MAX_GAME_PANE_WIDTH - dummy.getWidth()));
     }
 
     @Test
-    public void SetX_InvalidX_ReturnsFalse()
-    {
-        GameObject dummy = CreatePlayerObject();
+    public void SetX_InvalidX_ReturnsFalse() {
+        GameObject dummy = createPlayerObject();
 
-        assertFalse(dummy.TrySetX(-10));
-        assertFalse(dummy.TrySetX(0));
-        assertFalse(dummy.TrySetX(700));
-        assertFalse(dummy.TrySetX(AppConstants.MaxGamePaneWidth));
+        assertFalse(dummy.trySetX(-10));
+        assertFalse(dummy.trySetX(0));
+        assertFalse(dummy.trySetX(700));
+        assertFalse(dummy.trySetX(AppConstants.MAX_GAME_PANE_WIDTH));
     }
 
     @Test
-    public void SetY_ValidY_ReturnsTrue()
-    {
-        GameObject dummy = CreatePlayerObject();
+    public void SetY_ValidY_ReturnsTrue() {
+        GameObject dummy = createPlayerObject();
 
-        assertTrue(dummy.TrySetY(100));
-        assertTrue(dummy.TrySetY(10));
-        assertTrue(dummy.TrySetY(600));
-        assertTrue(dummy.TrySetY(AppConstants.MaxGamePaneHeight - dummy.GetHeight()));
+        assertTrue(dummy.trySetY(100));
+        assertTrue(dummy.trySetY(10));
+        assertTrue(dummy.trySetY(600));
+        assertTrue(dummy.trySetY(AppConstants.MAX_GAME_PANE_HEIGHT - dummy.getHeight()));
     }
 
 
     @Test
-    public void SetY_InvalidY_ReturnsFalse()
-    {
-        GameObject dummy = CreatePlayerObject();
+    public void SetY_InvalidY_ReturnsFalse() {
+        GameObject dummy = createPlayerObject();
 
-        assertFalse(dummy.TrySetX(-10));
-        assertFalse(dummy.TrySetX(0));
-        assertFalse(dummy.TrySetX(800));
-        assertFalse(dummy.TrySetX(AppConstants.MaxGamePaneHeight));
+        assertFalse(dummy.trySetX(-10));
+        assertFalse(dummy.trySetX(0));
+        assertFalse(dummy.trySetX(800));
+        assertFalse(dummy.trySetX(AppConstants.MAX_GAME_PANE_HEIGHT));
     }
 
     @Test
-    public void Intersect_NoIntersection_ReturnsFalse()
-    {
-        GameObject dummy1 = CreatePlayerObject();
-        GameObject dummy2 = CreatePlayerObject();
+    public void Intersect_NoIntersection_ReturnsFalse() {
+        GameObject dummy1 = createPlayerObject();
+        GameObject dummy2 = createPlayerObject();
 
-        assertTrue(dummy1.TrySetX(dummy1.GetX() + 40));
-        assertTrue(dummy1.TrySetY(dummy1.GetY() + 50));
+        assertTrue(dummy1.trySetX(dummy1.getX() + 40));
+        assertTrue(dummy1.trySetY(dummy1.getY() + 50));
 
-        assertFalse(dummy1.Intersect(dummy2));
+        assertFalse(dummy1.intersect(dummy2));
     }
 
     @Test
-    public void Intersect_Intersection_ReturnsTrue()
-    {
-        GameObject dummy1 = CreatePlayerObject();
-        GameObject dummy2 = CreatePlayerObject();
+    public void Intersect_Intersection_ReturnsTrue() {
+        GameObject dummy1 = createPlayerObject();
+        GameObject dummy2 = createPlayerObject();
 
-        assertTrue(dummy1.TrySetX(dummy1.GetX() + 15));
-        assertTrue(dummy1.TrySetY(dummy1.GetY() + 15));
+        assertTrue(dummy1.trySetX(dummy1.getX() + 15));
+        assertTrue(dummy1.trySetY(dummy1.getY() + 15));
 
-        assertTrue(dummy1.Intersect(dummy2));
+        assertTrue(dummy1.intersect(dummy2));
     }
 }
