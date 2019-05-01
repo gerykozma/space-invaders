@@ -12,6 +12,7 @@ import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -67,7 +68,7 @@ public class GameController {
 
         AnchorPane root;
         try {
-            root = FXMLLoader.load(getClass().getResource("..\\SpaceInvadersMainScene.fxml"));
+            root = FXMLLoader.load(getClass().getResource(String.format("..%sSpaceInvadersMainScene.fxml", File.separator)));
         } catch (IOException ex) {
             EVENT_LOGGER.debug("Cannot load fxml resource file. Make sure it is in the resources folder. " +
                     "Details: ", ex);
