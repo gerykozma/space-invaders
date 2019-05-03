@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public final void start(final Stage primaryStage) throws Exception {
         GameController game = new GameController(primaryStage);
-        game.StartGame(GameLevel.getInitialLevel());
+        game.startGame(GameLevel.getInitialLevel());
     }
 
     public static void main(String[] args) {

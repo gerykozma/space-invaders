@@ -82,7 +82,6 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.7.1</version>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
@@ -90,6 +89,7 @@
                 <executions>
                     <execution>
                         <id>enforce-java</id>
+                        <phase>validate</phase>
                         <goals>
                             <goal>enforce</goal>
                         </goals>
@@ -123,29 +123,28 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-shade-plugin</artifactId>
-            <version>3.1.0</version>
-            <executions>
-            <execution>
-            <goals>
-                <goal>shade</goal>
-            </goals>
-            <phase>package</phase>
-            <configuration>
-            <transformers>
-                <transformer
-                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                    <mainClass>main.Main</mainClass>
-                </transformer>
-            </transformers>
-                <shadedArtifactAttached>true</shadedArtifactAttached>
-            </configuration>
-            </execution>
-            </executions>
-            </plugin>
+            <!--<plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-shade-plugin</artifactId>
+                            <version>3.1.0</version>
+                            <executions>
+                                <execution>
+                                    <goals>
+                                        <goal>shade</goal>
+                                    </goals>
+                                    <phase>package</phase>
+                                    <configuration>
+                                        <transformers>
+                                            <transformer
+                                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                                <mainClass>main.Main</mainClass>
+                                            </transformer>
+                                        </transformers>
+                                        <shadedArtifactAttached>true</shadedArtifactAttached>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>

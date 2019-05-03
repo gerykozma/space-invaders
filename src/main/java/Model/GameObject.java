@@ -106,7 +106,7 @@ public class GameObject {
     }
 
     /**
-     * Realises collision detection. Represents an accurate way to determine if the objects are overlapping.
+     * Provides collision detection. Represents an accurate way to determine if the objects are overlapping.
      *
      * @param other Other GameObject to check collision.
      * @return true, if the two objects are colliding. False otherwise.

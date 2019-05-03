@@ -12,6 +12,9 @@ import java.util.ArrayList;
  */
 final class ObservableGameObjectFactory {
 
+    /**
+     * General event logger instance.
+     */
     private static final Logger EVENT_LOGGER = Logger.getLogger(ObservableGameObjectFactory.class);
 
     /**

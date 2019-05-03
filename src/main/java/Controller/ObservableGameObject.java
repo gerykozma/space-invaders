@@ -10,6 +10,10 @@ import javafx.scene.image.ImageView;
  * Represents the base class for UI objects on the game pane.
  */
 public abstract class ObservableGameObject extends ImageView {
+
+    /**
+     * Underlying game object.
+     * */
     private GameObject gameObject;
 
     ObservableGameObject(final GameObject gameObject) {
@@ -87,6 +91,9 @@ public abstract class ObservableGameObject extends ImageView {
         return this.gameObject;
     }
 
+    /**
+     * Converts an object type to a representative image.
+     * */
     private static final Image objectTypeToImage(final GameObjectType type) {
         switch (type) {
             case PlayerShip:

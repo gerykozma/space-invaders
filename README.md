@@ -14,7 +14,7 @@
 
 This project is simple a re-make of the classic Space Invaders game from the arcade era.
 
-- > Note: this project is used for academic purpose only.
+> Note: this project is used for academic purpose only.
 
 ## 2. Gameplay
 

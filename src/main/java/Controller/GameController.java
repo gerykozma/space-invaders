@@ -12,7 +12,6 @@ import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -36,22 +35,51 @@ public class GameController {
      * Player ship.
      */
     private SpaceShip player;
+
     /**
-     *
+     * Main game canvas.
      */
     private Pane gamePane;
+
+    /**
+     * UI label that represent player score.
+     */
     private Label scoreLabel;
+
+    /**
+     * UI label that represent game level.
+     */
     private Label levelLabel;
+
+    /**
+     * Object that manages player score calculation based on level and destroyed enemies.
+     */
     private ScoreHelper scoreHelper;
+
+    /**
+     * Cooldown between player shots.
+     */
     private double playerShootCooldown = 0.0;
-    private AnimationTimer timer;
+
+    /**
+     * Field that indicates whether the game is paused.
+     */
     private boolean isPaused = false;
+
+    /**
+     * Field that indicates whether the player is moving to the left.
+     */
     private boolean playerMoveLeft = false;
+
+    /**
+     * Field that indicates whether the player is moving to the right.
+     */
     private boolean playerMoveRight = false;
 
     private boolean enemyMoveToRight = false;
     private int enemyMoveTimer = 0;
     private Random randomGenerator;
+    private AnimationTimer timer;
 
     /**
      * Creates an initialized GameController object.
@@ -68,7 +96,7 @@ public class GameController {
 
         AnchorPane root;
         try {
-            root = FXMLLoader.load(getClass().getResource(String.format("..%sSpaceInvadersMainScene.fxml", File.separator)));
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("SpaceInvadersMainScene.fxml"));
         } catch (IOException ex) {
             EVENT_LOGGER.debug("Cannot load fxml resource file. Make sure it is in the resources folder. " +
                     "Details: ", ex);
@@ -78,7 +106,7 @@ public class GameController {
         this.timer = new AnimationTimer() {
             @Override
             public void handle(long now) {
-                UpdateScene();
+                updateScene();
             }
         };
         this.scoreHelper = new ScoreHelper(0, 1);
@@ -125,23 +153,23 @@ public class GameController {
                     break;
 
                 case SPACE:
-                    this.TryPlayerShoot();
+                    this.tryPlayerShoot();
                     break;
 
                 case P:
-                    this.PauseGame();
+                    this.pauseGame();
                     break;
                 case R:
-                    this.RestartGame();
+                    this.restartGame();
                     break;
                 case ESCAPE:
                     System.exit(0);
                     break;
                 case L:
-                    this.LoadGame();
+                    this.loadGame();
                     break;
                 case S:
-                    this.SaveGame();
+                    this.saveGame();
                     break;
             }
         });
@@ -156,12 +184,12 @@ public class GameController {
      * @param level given GameLevel to start.
      * @throws IllegalArgumentException if the level parameter is null.
      */
-    public void StartGame(GameLevel level) {
+    public void startGame(GameLevel level) {
         if (level == null) {
             throw new IllegalArgumentException("Level cannot be null.");
         }
 
-        this.InitNewLevel(level);
+        this.initNewLevel(level);
         timer.start();
         EVENT_LOGGER.info("Game started.");
     }
@@ -169,7 +197,7 @@ public class GameController {
     /**
      * Loads a saved GameLevel from file
      */
-    private void LoadGame() {
+    private void loadGame() {
         EVENT_LOGGER.info("Loading game..");
         this.isPaused = true;
         this.timer.stop();
@@ -191,7 +219,7 @@ public class GameController {
                 .loadGame(fileChooser.getSelectedFile().getPath());
         if (loadedLevel != null) {
             EVENT_LOGGER.info("Game level loaded from file.");
-            this.InitNewLevel(loadedLevel);
+            this.initNewLevel(loadedLevel);
             return;
         }
         EVENT_LOGGER.error("Failed to load game level.");
@@ -202,7 +230,7 @@ public class GameController {
      * Saves a GameLevel to file. The resulting file can be loaded
      * again to recreate the GameLevel.
      */
-    private void SaveGame() {
+    private void saveGame() {
         EVENT_LOGGER.info("Saving game..");
         this.isPaused = true;
         this.timer.stop();
@@ -240,19 +268,19 @@ public class GameController {
     /**
      * Resets score, level and begins a new game from level one.
      */
-    private void RestartGame() {
+    private void restartGame() {
         EVENT_LOGGER.info("Game Restarted");
         this.isPaused = false;
         this.timer.stop();
         this.scoreHelper = new ScoreHelper(0, 1);
-        this.StartGame(GameLevel.getInitialLevel());
+        this.startGame(GameLevel.getInitialLevel());
     }
 
     /**
      * Ends the game and analyzes results. It will raise pop-up windows based
      * on the outcome of the game.
      */
-    private void EndGame(boolean playerWon) {
+    private void endGame(boolean playerWon) {
         EVENT_LOGGER.info("Game over.");
 
         this.timer.stop();
@@ -291,37 +319,37 @@ public class GameController {
     /**
      * Main rendering method. Handles most of the UI logic.
      */
-    private void UpdateScene() {
+    private void updateScene() {
         EVENT_LOGGER.debug("Updating scene..");
 
-        this.UpdatePlayerTorpedoes();
-        this.UpDateEnemyTorpedoes();
+        this.updatePlayerTorpedoes();
+        this.upDateEnemyTorpedoes();
 
         if (this.playerMoveLeft) {
-            this.TryPlayerMoveLeft();
+            this.tryPlayerMoveLeft();
         }
 
         if (this.playerMoveRight) {
-            this.TryPlayerMoveRight();
+            this.tryPlayerMoveRight();
         }
 
         //Remove Dead Objects from the GamePane
-        this.RemoveDeadObjects();
+        this.removeDeadObjects();
 
         //Check if player is alive
-        this.CheckPlayerStatus();
+        this.checkPlayerStatus();
 
         //Check if there are remaining enemies, else increase level
-        if (!this.AnyEnemyShipAlive()) {
-            this.IncreaseLevel();
+        if (!this.anyEnemyShipAlive()) {
+            this.increaseLevel();
         }
 
         //Try to shoot torpedoes every 50 nanoseconds (enemies hav 50% chance to shoot)
         if (enemyMoveTimer % 50 == 0) {
-            this.EnemyShootTorpedoes();
+            this.enemyShootTorpedoes();
         }
 
-        this.MoveEnemyShips();
+        this.moveEnemyShips();
 
         if (this.playerShootCooldown > 0.0) {
             this.playerShootCooldown -= 0.1;
@@ -335,9 +363,9 @@ public class GameController {
      * until the first failed attempt to move into that direction.
      * Then change direction.
      */
-    private void MoveEnemyShips() {
+    private void moveEnemyShips() {
         EVENT_LOGGER.debug("Moving enemies.");
-        List<SpaceShip> enemyShips = GetGameObjects()
+        List<SpaceShip> enemyShips = getGameObjects()
                 .stream()
                 .filter(o -> o.getGameObject().getType().equals(EnemyShip))
                 .map(o -> (SpaceShip) o)
@@ -362,8 +390,8 @@ public class GameController {
      * Shot enemy torpedoes. Shooting algorithm: every enemy ship has
      * a chance of 50% to shot a torpedo.
      */
-    private void EnemyShootTorpedoes() {
-        List<SpaceShip> enemyShips = GetGameObjects()
+    private void enemyShootTorpedoes() {
+        List<SpaceShip> enemyShips = getGameObjects()
                 .stream()
                 .filter(o -> o.getGameObject().getType().equals(EnemyShip))
                 .map(o -> (SpaceShip) o)
@@ -371,14 +399,14 @@ public class GameController {
 
         for (SpaceShip enemy : enemyShips) {
             if (randomGenerator.nextDouble() > 0.5) {
-                this.Shoot(enemy);
+                this.shoot(enemy);
                 EVENT_LOGGER.debug("Enemy shoot a torpedo.");
             }
         }
     }
 
-    private boolean AnyEnemyShipAlive() {
-        for (ObservableGameObject gameObject : this.GetGameObjects()) {
+    private boolean anyEnemyShipAlive() {
+        for (ObservableGameObject gameObject : this.getGameObjects()) {
             if (gameObject.getGameObject().getType().equals(EnemyShip)
                     && !gameObject.getGameObject().getIsDead()) {
                 return true;
@@ -391,23 +419,23 @@ public class GameController {
      * Creates a new level with +1 enemy ship compared to the beginning of the current level. If
      * the level count reaches it's maximum the game is ended here and the player is victorious.
      */
-    private void IncreaseLevel() {
+    private void increaseLevel() {
         if (this.scoreHelper.getLevel() < AppConstants.MAX_LEVEL_NUMBER) {
             EVENT_LOGGER.info("Increasing game level..");
             this.scoreHelper.increaseLevel();
-            this.InitNewLevel(new GameLevel(
+            this.initNewLevel(new GameLevel(
                     null,
                     this.scoreHelper.getScore(),
                     this.scoreHelper.getLevel()));
         } else if (this.scoreHelper.getLevel() == AppConstants.MAX_LEVEL_NUMBER) {
-            this.EndGame(true);
+            this.endGame(true);
         }
     }
 
     /**
      * Maps the children of GamePane to List.
      */
-    private List<ObservableGameObject> GetGameObjects() {
+    private List<ObservableGameObject> getGameObjects() {
         return this.gamePane
                 .getChildren()
                 .stream()
@@ -418,11 +446,11 @@ public class GameController {
     /**
      * Moves the torpedoes shot by the player and checks if there is a hit.
      */
-    private void UpdatePlayerTorpedoes() {
-        for (ObservableGameObject playerTorpedo : this.GetGameObjects()) {
+    private void updatePlayerTorpedoes() {
+        for (ObservableGameObject playerTorpedo : this.getGameObjects()) {
             if (playerTorpedo.getGameObject().getType().equals(PlayerTorpedo)) {
                 playerTorpedo.tryMoveUp();
-                this.GetGameObjects()
+                this.getGameObjects()
                         .stream()
                         .filter(enemy -> enemy.getGameObject().getType().equals(EnemyShip))
                         .forEach(enemy ->
@@ -442,8 +470,8 @@ public class GameController {
     /**
      * Moves torpedoes shot by enemy ships and checks if there is a hit.
      */
-    private void UpDateEnemyTorpedoes() {
-        for (ObservableGameObject enemyTorpedo : this.GetGameObjects()) {
+    private void upDateEnemyTorpedoes() {
+        for (ObservableGameObject enemyTorpedo : this.getGameObjects()) {
             if (enemyTorpedo.getGameObject().getType().equals(EnemyTorpedo)) {
                 enemyTorpedo.tryMoveDown();
                 if (enemyTorpedo.getGameObject().intersect(this.player.getGameObject())) {
@@ -458,10 +486,10 @@ public class GameController {
     /**
      * Checks whether the player is alive. If not, the game is ended.
      */
-    private void CheckPlayerStatus() {
+    private void checkPlayerStatus() {
         if (this.player.getGameObject().getIsDead()) {
             EVENT_LOGGER.info("Player is Dead.");
-            this.EndGame(false);
+            this.endGame(false);
         }
     }
 
@@ -470,9 +498,9 @@ public class GameController {
      * torpedo reached GamePane boundary and failed to hit anything, enemy ship was hit by player's torpedo,
      * player was hit by enemy torpedo.
      */
-    private void RemoveDeadObjects() {
+    private void removeDeadObjects() {
         EVENT_LOGGER.debug("Removing dead objects.");
-        List<ObservableGameObject> deadObjects = this.GetGameObjects()
+        List<ObservableGameObject> deadObjects = this.getGameObjects()
                 .stream()
                 .filter(obj -> obj.getGameObject().getIsDead())
                 .collect(Collectors.toList());
@@ -486,10 +514,10 @@ public class GameController {
     /**
      * Initializes a new game level. It can be used to load any game level.
      */
-    private void InitNewLevel(GameLevel gameLevel) {
+    private void initNewLevel(GameLevel gameLevel) {
         //Remove left-over objects and data
         EVENT_LOGGER.debug("Removing left-over objects..");
-        this.gamePane.getChildren().removeAll(this.GetGameObjects());
+        this.gamePane.getChildren().removeAll(this.getGameObjects());
         this.enemyMoveTimer = 0;
 
         this.levelLabel.setText(String.format("%s", gameLevel.getLevel()));
@@ -536,7 +564,7 @@ public class GameController {
      *
      * @param shooter parent of the torpedo object. Either the player or an enemy ship.
      */
-    private void Shoot(SpaceShip shooter) {
+    private void shoot(SpaceShip shooter) {
         Torpedo torpedo = ObservableGameObjectFactory.createTorpedo(shooter);
         this.gamePane.getChildren().add(torpedo);
         EVENT_LOGGER.debug(String.format("Torpedo shot by %s.", shooter.toString()));
@@ -546,9 +574,9 @@ public class GameController {
      * If the shooting cool down is 0, will shoot a torpedo (owned by the player).
      * If the game is on pause, the command will be ignored.
      */
-    private void TryPlayerShoot() {
+    private void tryPlayerShoot() {
         if (!this.isPaused && this.playerShootCooldown <= 0.0) {
-            this.Shoot(this.player);
+            this.shoot(this.player);
             this.playerShootCooldown = 1.5;
             EVENT_LOGGER.debug("Player shot torpedo.");
         }
@@ -558,7 +586,7 @@ public class GameController {
      * If it can move to left, then it will move the player to the left.
      * If the game is on pause, the command will be ignored.
      */
-    private void TryPlayerMoveLeft() {
+    private void tryPlayerMoveLeft() {
         if (!this.isPaused) {
             this.player.tryMoveLeft();
         }
@@ -568,7 +596,7 @@ public class GameController {
      * If it can move to right, then it will move the player to the right.
      * If the game is on pause, the command will be ignored.
      */
-    private void TryPlayerMoveRight() {
+    private void tryPlayerMoveRight() {
         if (!this.isPaused) {
             this.player.tryMoveRight();
         }
@@ -577,7 +605,7 @@ public class GameController {
     /**
      * Pauses the game. Scene update will be interrupted, UI objects will freeze.
      */
-    private void PauseGame() {
+    private void pauseGame() {
         if (this.player.getGameObject().getIsDead()) {
             return;
         }
